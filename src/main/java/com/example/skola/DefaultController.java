@@ -8,7 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DefaultController {
     
     @RequestMapping(value = "/")
-    public String index() {
+    public String Home() {
         return "MainPage.html";
     }
+
+    @RequestMapping(value = "/Login")
+    public String Login() {
+        return "Login.html";
+    }
+
 }
