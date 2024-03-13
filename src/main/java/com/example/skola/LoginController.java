@@ -3,24 +3,17 @@ package com.example.skola;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class LoginController {
 
-
     @PostMapping("/login")
-    @ResponseBody
-    public String LoginUser(@RequestParam("lietotajvards") String username, @RequestParam("parole") String password) {
-        if(username == "" || password == "")
-        {
-            return "idots";
+    public RedirectView loginUser(@RequestParam("lietotajvards") String username, @RequestParam("parole") String password) {
+        if (username.isEmpty() || password.isEmpty()) {
+            return new RedirectView("/Login.html");
+        } else {
+            return new RedirectView("/loggedin.html");
         }
-        else
-        {
-            return username + " " + password;
-        }
-
-
     }
 }
