@@ -20,7 +20,7 @@ public class DefaultController {
     public String Login() {
 
         
-        User user = new User("John", "123");
+        // User user = new User("John", "123");
 
         return "Login.html";
     }
