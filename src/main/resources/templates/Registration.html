@@ -8,11 +8,11 @@
 
 <body >
     <div class = "form-container">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <div th:if="${error}" style="color: red;">
             <p th:text="${error}"></p>
         </div>
-        <form action="/login" method="post">
+        <form action="/registration" method="post">
             <label for = "lietotajvards">E-pasts</label><br>
             <input type="text" id="lietotajvards" name="lietotajvards"><br>
             <br>

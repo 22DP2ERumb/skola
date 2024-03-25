@@ -14,14 +14,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
     private String username;
-
     private String password;
+
+    public User() {
+    }
 
     public User(String lietotajvards, String parole)
     {
-        this.username = lietotajvards;
-        this.password = parole;
-    }   
+        username = lietotajvards;
+        password = parole;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
 }
