@@ -89,7 +89,7 @@ ul li.active a
 {
     border: 1px solid #000000;
     padding: 5px 20px;
-    color:#65ff6f;
+    color:#000000;
     transition: 0.5 ease;
     font-size: 18px;
     text-decoration: none;
@@ -99,4 +99,106 @@ ul li.active a
 {
     background-color: #000000;
     color:#fff;
+}
+
+body .Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+    font-family: "Segoe UI", "Tahoma", Geneva, Verdana, sans-serif;
+}
+
+.Login{
+    border: 1px solid #000000;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    width: 27rem;
+    height: 37rem;
+    overflow: hidden;
+}
+
+.form{
+    display: grid;
+    place-content: center;
+    box-sizing: border-box;
+    background-image: url(../images/image.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1{
+    display: grid;
+    place-content: center;
+    margin-top: -5rem;
+    font-size: 2.5rem;
+    margin-bottom: 75px;
+    color: #fff;
+}
+
+input{
+    background: transparent;
+    width: 18rem;
+    height: 1.5rem;
+    font-size: 0.9rem;
+    border: 2px #fff;
+    border-radius: 1rem;
+    padding: 5px;
+}
+
+::placeholder{
+    color: rgba(255, 255, 255, 0.75);
+    padding: 4px;
+}
+
+
+
+label{
+    font-size: 1.3rem;
+    padding: 0.3rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+button{
+    margin-top: 2rem;
+    width: 19rem;
+    height: 2.4rem;
+    font-weight: bold;
+    border: #fff;
+    border-radius: 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000000;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(76,76,76,0.75);
+}
+
+p{
+    margin: 0.1rem 0 - 1rem 0;
+    padding: 0.3rem;
+    color: #fff;
+}
+
+a{
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+}
+
+.bxs-user{
+    display: block;
+    position: absolute;
+    padding: 150px 0 0 335px;
+    color: #fff;
+}
+
+.bxs-lock-alt{
+    display: block;
+    position: absolute;
+    padding: 239px 0 0 335px;
+    color: #fff;
 }

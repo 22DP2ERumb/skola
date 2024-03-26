@@ -4,27 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
-<body >
-    <div class = "form-container">
-        <h1>Login</h1>
-        <div th:if="${error}" style="color: red;">
-            <p th:text="${error}"></p>
-        </div>
-        <form action="/login" method="post">
-            <label for = "lietotajvards">E-pasts</label><br>
-            <input type="text" id="lietotajvards" name="lietotajvards"><br>
-            <br>
-
-            <label for = "parole"> Parole </label><br>
-            <input type = "password" id = "parole" name = "parole"><br>
-            <br>
-
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</body>
 <body> 
     <style>
         body 
@@ -34,5 +16,19 @@
             background-repeat: no-repeat;
         }
     </style>
+</body>
+<body> 
+    <div class="Login">
+        <form class="form">
+            <h1>Login</h1>
+            <label>Username</label>
+            <input type="text" placeholder="E-mail"><i class="bx bxs-user"></i><br>
+            <label>Password</label>
+            <input type="password" placeholder="Password"><i class="bx bxs-lock-alt"></i><br>
+            <p><a>Forgot password?</a></p>
+            <button>LOGIN</button>
+            <p>Don't have an account? <a>Register</a></p>
+        </form>
+    </div>
 </body>
 </html>
