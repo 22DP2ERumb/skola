@@ -101,10 +101,9 @@ ul li.active a
     color:#fff;
 }
 
-body .Login{
+.center{
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 30rem;
     font-family: "Segoe UI", "Tahoma", Geneva, Verdana, sans-serif;
 }
@@ -116,6 +115,7 @@ body .Login{
     width: 27rem;
     height: 37rem;
     overflow: hidden;
+    margin-top: 8rem;
 }
 
 .form{
@@ -150,7 +150,7 @@ input{
 }
 
 ::placeholder{
-    color: rgba(255, 255, 255, 0.75);
+    color: black;
     padding: 4px;
 }
 
@@ -192,13 +192,15 @@ a{
 .bxs-user{
     display: block;
     position: absolute;
-    padding: 150px 0 0 335px;
+    padding: 210px 0 0 367px;
     color: #fff;
+    pointer-events: none;
 }
 
 .bxs-lock-alt{
     display: block;
     position: absolute;
-    padding: 239px 0 0 335px;
+    padding: 290px 0 0 367px;
     color: #fff;
+    pointer-events: none;
 }

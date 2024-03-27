@@ -16,6 +16,7 @@ public class User {
 
     private String username;
     private String password;
+    public boolean isActive;
 
     public User() {
     }
@@ -24,9 +25,14 @@ public class User {
     {
         username = lietotajvards;
         password = parole;
+        isActive = false;
     }
     
     public String getPassword() {
         return password;
+    }
+    public String getUsername()
+    {
+        return username;
     }
 }

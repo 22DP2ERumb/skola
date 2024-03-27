@@ -34,4 +34,3 @@ public class DefaultController {
         return "ContactUs.html";
     }
 }
-
