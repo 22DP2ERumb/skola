@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserProfileController {
     @Autowired
     private UserRepository userRepository;
+
     private User user;
 
     @GetMapping(value = "/profile")
@@ -17,7 +18,7 @@ public class UserProfileController {
         if(user != null)
         {
             model.addAttribute("username", user.getUsername());
-            return "UserProfile.html";
+            return "UsersProfile";
         }
         else
         {

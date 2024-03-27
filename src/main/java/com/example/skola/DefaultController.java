@@ -13,11 +13,6 @@ public class DefaultController {
         return "MainPage.html";
     }
 
-    @GetMapping(value = "/login")
-    public String Login() {
-        return "Login.html";
-    }
-
     @GetMapping(value = "/registration")
     public String Regsitration()
     {

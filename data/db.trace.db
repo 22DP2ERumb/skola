@@ -565,3 +565,9 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection wa
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 94 more
+2024-03-27 12:33:39.706360Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'flase' (SK_USERS: ""IS_ACTIVE"" BOOLEAN NOT NULL)"; SQL statement:
+UPDATE "PUBLIC"."SK_USERS" SET "ID"=? ,"PASSWORD"=? ,"USERNAME"=? ,"IS_ACTIVE"=?  WHERE "ID"=? [22018-224]
+2024-03-27 12:33:39.710074Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'flase' (SK_USERS: ""IS_ACTIVE"" BOOLEAN NOT NULL)"; SQL statement:
+UPDATE "PUBLIC"."SK_USERS" SET "ID"=? ,"PASSWORD"=? ,"USERNAME"=? ,"IS_ACTIVE"=?  WHERE "ID"=? [22018-224]

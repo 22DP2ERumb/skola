@@ -15,6 +15,21 @@ public class LoginController {
     private UserRepository userRepository;
     private User user;
 
+    @GetMapping(value = "/login")
+    public String Login() 
+    {
+        user = userRepository.findByIsActiveTrue();
+        if(user != null)
+        {
+
+            return "redirect:/profile";
+        }
+        else
+        {
+            return "Login";
+        }
+    }
+
     @PostMapping("/login")
     public String loginUser(@RequestParam("lietotajvards") String username, @RequestParam("parole") String password, RedirectAttributes redirectAttributes) {
         user = userRepository.findByUsername(username);
@@ -23,7 +38,7 @@ public class LoginController {
         {
             user.isActive = true;
             userRepository.save(user);
-            return ("redirect:/profile");
+            return "redirect:/profile";
         }
         else
         {
