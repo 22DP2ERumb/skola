@@ -17,7 +17,10 @@ public class UserProfileController {
         user = userRepository.findByIsActiveTrue();
         if(user != null)
         {
+            model.addAttribute("fullName", user.getFullName());
             model.addAttribute("username", user.getUsername());
+            model.addAttribute("Email", user.getEmails());
+            model.addAttribute("numurs", user.getNumurs());
             return "UsersProfile";
         }
         else

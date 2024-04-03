@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.ui.Model;
 
 
 @Controller
@@ -31,8 +30,8 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestParam("lietotajvards") String username, @RequestParam("parole") String password, RedirectAttributes redirectAttributes) {
-        user = userRepository.findByUsername(username);
+    public String loginUser(@RequestParam("emails") String emails, @RequestParam("parole") String password, RedirectAttributes redirectAttributes) {
+        user = userRepository.findByEmails(emails);
 
         if (user != null && user.getPassword().equals(password))
         {
@@ -45,6 +44,11 @@ public class LoginController {
             redirectAttributes.addFlashAttribute("error", "Invalid username or password");
             return "redirect:/login";
         }
+    }
 
+    @GetMapping(value = "/forgotpassword")
+    public String forgotpassword()
+    {
+        return "forgotpassword";
     }
 }

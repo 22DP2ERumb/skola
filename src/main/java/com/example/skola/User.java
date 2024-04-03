@@ -16,15 +16,21 @@ public class User {
 
     private String username;
     private String password;
+    private String Fullname;
+    private String emails;
+    private String numurs;
     public boolean isActive;
 
     public User() {
     }
 
-    public User(String lietotajvards, String parole)
+    public User(String lietotajvards, String parole, String Fullname, String emails, String numurs)
     {
         username = lietotajvards;
         password = parole;
+        this.Fullname = Fullname;
+        this.emails = emails;
+        this.numurs = numurs;
         isActive = false;
     }
     
@@ -34,5 +40,19 @@ public class User {
     public String getUsername()
     {
         return username;
+    }
+    public String getFullName()
+    {
+        return Fullname;
+    }
+
+    public String getEmails()
+    {
+        return emails;
+    }
+
+    public String getNumurs()
+    {
+        return numurs;
     }
 }

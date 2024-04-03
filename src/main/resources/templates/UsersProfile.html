@@ -3,11 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/UserProfile.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>User Profile</h1>
-    Username:
-    <p th:text="${username}"></p>
+    <div class="container">
+        <div class="main">
+            <div class="topbar">
+                <a href="">logout</a>
+                <a href="">Support</a>
+                <a href="">Lessons</a>
+                <a href="">Grades</a>
+                <a href="">Settings</a>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mt-1">
+                    <div class="card text-center sidebar">
+                        <div class="card-body">
+                            <img src="/images/user2.jpg" class="rounded-circle" width="150">
+                            <div class="mt-3">
+                                <h3><p th:text="${username}"></p></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-1">
+                    <div class="card mb-3 content">
+                        <h1 class="m-3 pt-3">About</h1>
+                        <div class="col-md-3">
+                            <h5>Full Name</h5>
+                        </div>
+                        <div class="col-md-8 text-secondary">
+                            <p th:text="${fullName}"></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Email</h5>
+                        </div>
+                        <div class="col-md-9 text-secondary">
+                            <p th:text="${Email}"></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Phone</h5>
+                        </div>
+                        <div class="col-md-9 text-secondary">
+                            <p th:text="${numurs}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
