@@ -1,44 +1,86 @@
-body{
-    margin-top: 20px;
-    background-color: white;
-}
-
-.main{
-    padding: 15px;
+body {
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
 }
 
-.topbar{
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topbar {
     background-color: teal;
     overflow: hidden;
+    margin-top: 30px;
 }
 
-.topbar a{
+.topbar a {
     float: right;
     color: whitesmoke;
     text-align: center;
     padding: 20px 26px;
     text-decoration: none;
-    font-size: 26px
+    font-size: 18px;
+    transition: all 0.3s ease; /* Add transition for smooth effect */
 }
 
-.sidebar{
+.topbar a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+    border-radius: 3px; /* Add rounded corners on hover */
+    transform: translateY(-2px); /* Move the button slightly upwards on hover */
+}
+
+
+.sidebar {
     background-color: #333;
     color: white;
     height: 100%;
 }
 
-.sidebar a{
+.sidebar a {
     margin-left: 10px;
     display: block;
     color: white;
     padding-bottom: 10px;
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
 }
 
-.card{
+.card {
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body img {
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin: 0;
+}
+
+.details h5 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.text-secondary {
+    color: #777;
+}
+
+.content {
+    padding: 20px;
 }
