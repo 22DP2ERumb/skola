@@ -29,13 +29,11 @@ public class UserProfileController {
             return "redirect:/login";
         }
     }
-    @PostMapping("/logout")
+    @GetMapping("/logout")
     public String logout() 
     {
-        if (user != null) {
-            user.isActive = false;
-            userRepository.save(user);
-        }
+        user.isActive = false;
+        userRepository.save(user);
         return "redirect:/login";
     } 
 }
