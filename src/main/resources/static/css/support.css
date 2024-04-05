@@ -61,3 +61,47 @@ th {
 .topbar a.active {
     background-color: #0f0606; /* Change background color to darken */
 }
+/* Add these styles to support.css */
+
+.support-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.support-form h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Darken the color for better visibility */
+}
+
+.support-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.support-form input[type="text"],
+.support-form input[type="email"],
+.support-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.support-form input[type="submit"] {
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.support-form input[type="submit"]:hover {
+    background-color: #007a74; /* Darken the color on hover */
+}

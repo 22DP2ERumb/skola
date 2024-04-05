@@ -2091,3 +2091,15 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /workspaces/skol
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 60 more
+2024-04-05 11:38:20.921640Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID"; expected "INSERT"; SQL statement:
+ID [42001-224]
+2024-04-05 11:38:26.580486Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID ID"; expected "INSERT"; SQL statement:
+ID ID [42001-224]
+2024-04-05 11:38:28.456736Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID"; expected "INSERT"; SQL statement:
+ID [42001-224]
+2024-04-05 11:38:31.560314Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]PASSWORD"; expected "PREPARE"; SQL statement:
+PASSWORD [42001-224]

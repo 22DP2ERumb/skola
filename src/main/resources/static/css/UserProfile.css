@@ -84,3 +84,6 @@ h3 {
 .content {
     padding: 20px;
 }
+.topbar a.active {
+    background-color: #0f0606; /* Change background color to darken */
+}

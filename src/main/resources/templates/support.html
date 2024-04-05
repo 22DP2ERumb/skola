@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson List</title>
+    <link rel="stylesheet" href="css/support.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="main">
+        <form class="topbar">
+            <a href="/logout">Logout</a>
+            <a href="/support" class="active">Support</a>
+            <a href="/lessons">Lessons</a>
+            <a href="#">Grades</a>
+            <a href="/profile">Profile</a>
+        </form>
+        <div class="table-container">
+            <!-- Support Form -->
+            <div class="support-form">
+                <h1>Support Form</h1>
+                <form>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

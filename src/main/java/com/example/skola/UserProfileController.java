@@ -12,6 +12,7 @@ public class UserProfileController {
     private UserRepository userRepository;
 
     private User user;
+    
 
     @GetMapping(value = "/profile")
     public String UsersProfile(Model model) {
@@ -32,8 +33,42 @@ public class UserProfileController {
     @GetMapping("/logout")
     public String logout() 
     {
-        user.isActive = false;
-        userRepository.save(user);
-        return "redirect:/login";
-    } 
+        user = userRepository.findByIsActiveTrue();
+        if (user != null)
+        {
+            user.isActive = false;
+            userRepository.save(user);
+            return "redirect:/";
+        }
+        else
+        {
+            return "redirect:/login";
+        }
+    }
+    @GetMapping("/lessons")
+    public String lessons()
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (user != null)
+        {
+            return "Lessons";
+        }
+        else
+        {
+            return "redirect:/login";
+        }
+    }
+    @GetMapping("/support")
+    public String support()
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (user != null)
+        {
+            return "support";
+        }
+        else
+        {
+            return "redirect:/login";
+        }
+    }  
 }
