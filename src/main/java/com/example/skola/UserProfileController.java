@@ -23,6 +23,7 @@ public class UserProfileController {
             model.addAttribute("username", user.getUsername());
             model.addAttribute("Email", user.getEmails());
             model.addAttribute("numurs", user.getNumurs());
+            model.addAttribute("role", user.getLore());
             return "UsersProfile";
         }
         else
@@ -70,5 +71,18 @@ public class UserProfileController {
         {
             return "redirect:/login";
         }
-    }  
+    }
+    @GetMapping("/lessonManager")
+    public String lessonManager()
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (user != null && "MacibuDala".equals(user.getLore()))
+        {
+            return "StunduSarakstaVeidosana";
+        }
+        else
+        {
+            return "redirect:/login";
+        }
+    }
 }

@@ -19,6 +19,8 @@ public class User {
     private String Fullname;
     private String emails;
     private String numurs;
+    private String lore;
+    private String subject;
     public boolean isActive;
 
     public User() {
@@ -32,6 +34,8 @@ public class User {
         this.emails = emails;
         this.numurs = numurs;
         isActive = false;
+        lore = null;
+        subject = null;
     }
     
     public String getPassword() {
@@ -54,5 +58,10 @@ public class User {
     public String getNumurs()
     {
         return numurs;
+    }
+
+    public String getLore()
+    {
+        return lore;
     }
 }
