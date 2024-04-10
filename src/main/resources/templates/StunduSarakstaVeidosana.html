@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>asd</title>
+    <title>Lesson List</title>
+    <link rel="stylesheet" href="css/support.css">
 </head>
 <body>
-    asdasdasd
+
+<div class="container">
+    <div class="main">
+        <form class="topbar">
+            <a href="/logout">Logout</a>
+            <a href="/support">Support</a>
+            <a href="/lessons">Lessons</a>
+            <a href="/grades">Grades</a>
+            <a href="/profile">Profile</a>
+            <a href="/lessonManager" class="active">Lesson Manager</a>
+
+        </form>
+        <div class="options">
+            <form action = "/lessonManager" method="post">
+                
+                Lesson 1<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 2<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 3<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 4<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 5<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 6<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 7<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 8<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 9<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 10<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 11<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+                Lesson 12<input list="subjects" name="schoolclass" id="schoolclass" required><br>
+
+
+                <datalist id="subjects">
+                    <option value="Mathematics">
+                    <option value="Science">
+                    <option value="History">
+                    <option value="English">
+                    <option value="Sport">
+                    <option value="Computer Science">
+                </datalist>
+                <br>
+                <label for="group">Group:</label><br>
+                <input list="groups" name="schoolclass" id="schoolclass" required>
+
+                <datalist id="groups">
+                    <option value="DP1-1">
+                    <option value="DP1-2">
+                    <option value="DP1-3">
+                    <option value="DP1-4">
+                </datalist>
+                <br>
+                <label for="Day">Day:</label><br>
+                <input list="days" name="Day" id="Day" required>
+
+                <datalist id="days">
+                    <option value="Monday">
+                    <option value="Tuesday">
+                    <option value="Wednesday">
+                    <option value="Thursday">
+                    <option value="Friday">
+                </datalist>
+                <br><br>
+                <input type="submit" value="Submit">
+                <br>
+                
+            
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

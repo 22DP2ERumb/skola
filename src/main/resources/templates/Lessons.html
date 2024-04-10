@@ -14,10 +14,20 @@
             <a href="/logout">Logout</a>
             <a href="/support">Support</a>
             <a href="/lessons" class="active">Lessons</a>
-            <a href="#">Grades</a>
+            <a href="/grades">Grades</a>
             <a href="/profile">Profile</a>
         </form>
         <div class="table-container">
+            <label for="Day">Day:</label><br>
+            <input list="days" name="Day" id="Day" required>
+            <datalist id="days">
+                <option value="Monday">
+                <option value="Tuesday">
+                <option value="Wednesday">
+                <option value="Thursday">
+                <option value="Friday">
+            </datalist>
+            <div class="blank-line"></div>
             <table>
                 <thead>
                     <tr>
@@ -31,10 +41,75 @@
                     <tr>
                         <td>1</td>
                         <td>8:30-9:10</td>
-                        <td>Introduction to HTML</td>
+                        <td><p th:text="${Subject1}"></p></td>
                         <td>This lesson covers the basics of HTML including tags, elements, and structure.</td>
                     </tr>
-                    <!-- Add more table rows as needed -->
+                    <tr>
+                        <td>2</td>
+                        <td>9:15-9:55</td>
+                        <td><p th:text="${Subject2}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>10:10-10:50</td>
+                        <td><p th:text="${Subject3}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>10:55-11:35</td>
+                        <td><p th:text="${Subject4}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>12:05-12:45</td>
+                        <td><p th:text="${Subject5}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>12:50-13:30</td>
+                        <td><p th:text="${Subject6}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>13:35-14:15</td>
+                        <td><p th:text="${Subject7}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>14:20-15:00</td>
+                        <td><p th:text="${Subject8}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>15:05-15:45</td>
+                        <td><p th:text="${Subject9}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>15:50-16:30</td>
+                        <td><p th:text="${Subject10}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>16:35-17:15</td>
+                        <td><p th:text="${Subject11}"></p></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>17:20-18:00</td>
+                        <td><p th:text="${Subject12}"></p></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>

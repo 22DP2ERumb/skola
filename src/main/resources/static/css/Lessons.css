@@ -61,3 +61,8 @@ th {
 .topbar a.active {
     background-color: #0f0606; /* Change background color to darken */
 }
+
+.blank-line {
+    margin-bottom: 20px; 
+    height: 20px; 
+}

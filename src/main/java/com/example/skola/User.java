@@ -14,7 +14,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String username;
     private String password;
     private String Fullname;
     private String emails;
@@ -22,13 +21,13 @@ public class User {
     private String lore;
     private String subject;
     public boolean isActive;
+    public String schoolClass;
 
     public User() {
     }
 
-    public User(String lietotajvards, String parole, String Fullname, String emails, String numurs)
+    public User(String parole, String Fullname, String emails, String numurs, String schoolClass)
     {
-        username = lietotajvards;
         password = parole;
         this.Fullname = Fullname;
         this.emails = emails;
@@ -36,14 +35,11 @@ public class User {
         isActive = false;
         lore = null;
         subject = null;
+        this.schoolClass = schoolClass;
     }
     
     public String getPassword() {
         return password;
-    }
-    public String getUsername()
-    {
-        return username;
     }
     public String getFullName()
     {
@@ -63,5 +59,9 @@ public class User {
     public String getLore()
     {
         return lore;
+    }
+    public String getSchoolClass()
+    {
+        return schoolClass;
     }
 }

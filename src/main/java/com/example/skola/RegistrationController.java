@@ -18,12 +18,12 @@ public class RegistrationController {
     }
 
     @PostMapping ("/registration")
-    public String Registration(@RequestParam("lietotajvards") String username, @RequestParam("parole") String password, @RequestParam("pilnsvards") String Fullname, @RequestParam("emails") String emails, @RequestParam("numurs") String numurs, @RequestParam("apstripinatparole") String repeatPassword)
+    public String Registration(@RequestParam("schoolClass") String schoolClass, @RequestParam("parole") String password, @RequestParam("pilnsvards") String Fullname, @RequestParam("emails") String emails, @RequestParam("numurs") String numurs, @RequestParam("apstripinatparole") String repeatPassword)
     {
         User check = userRepository.findByEmails(emails);
         if(check == null && password.matches(repeatPassword))
         {
-            User user = new User(username, password, Fullname, emails, numurs);
+            User user = new User(password, Fullname, emails, numurs, schoolClass);
             userRepository.save(user);
             return "redirect:/login";
         }

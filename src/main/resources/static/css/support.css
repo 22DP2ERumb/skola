@@ -105,3 +105,47 @@ th {
 .support-form input[type="submit"]:hover {
     background-color: #007a74; /* Darken the color on hover */
 }
+
+/* Styles for the form within the .options div */
+.options form {
+    width: 75%; /* Make it 25% smaller */
+    max-width: 400px; /* Maximum width to maintain readability */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.options form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center; /* Center align labels */
+}
+
+.options form input[type="text"],
+.options form input[type="submit"] {
+    width: calc(100% - 20px); /* Adjusted for input padding and border */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center; /* Center align text */
+}
+
+.options form input[type="submit"] {
+    background-color: #00503f;
+    color: white;
+    cursor: pointer;
+}
+
+.options form input[type="submit"]:hover {
+    background-color: #009670;
+}
+

@@ -2103,3 +2103,204 @@ ID [42001-224]
 2024-04-05 11:38:31.560314Z jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]PASSWORD"; expected "PREPARE"; SQL statement:
 PASSWORD [42001-224]
+2024-04-10 06:39:35.625557Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:39:43.572096Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:39:54.155294Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:40:34.475054Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:41:40.593656Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:42:47.620352Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:42:50.556214Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:42:53.320102Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:43:01.424147Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-10 06:50:41.642886Z jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM SK_USERS SK_LESSONS [*]SK_USERS"; SQL statement:
+SELECT * FROM SK_USERS SK_LESSONS SK_USERS [42000-224]
+2024-04-10 07:47:41.721084Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:47:50.990115Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:47:55.235597Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:05.457434Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:07.738917Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:12.944754Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:35.293561Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:38.518603Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:48.119794Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:50.319991Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:48:53.462240Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:49:55.528580Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:50:01.439624Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:50:03.898210Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:50:06.144958Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:50:11.439649Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:50:34.725309Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:50:36.677242Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:51:05.905214Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:53:22.658531Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:53:45.289428Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into sk_lessons ([*]day,lesson_number,schoolclass,subject,id) values (?,?,?,?,?)"; expected "identifier"; SQL statement:
+insert into sk_lessons (day,lesson_number,schoolclass,subject,id) values (?,?,?,?,?) [42001-224]
+2024-04-10 07:56:13.347928Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:16.831018Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:19.402654Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:25.715882Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:33.540363Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:36.001287Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:38.142561Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:40.670171Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:48.043290Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:50.377239Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:52.880378Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:56:55.275900Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 07:57:01.620746Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]day varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column day varchar(255) [42001-224]
+2024-04-10 08:02:11.085285Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into sk_lessons ([*]day,lesson_number,schoolclass,subject,id) values (?,?,?,?,?)"; expected "identifier"; SQL statement:
+insert into sk_lessons (day,lesson_number,schoolclass,subject,id) values (?,?,?,?,?) [42001-224]
+2024-04-10 08:04:20.296803Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "create table sk_lessons (id bigint not null, [*]day varchar(255), lesson_number integer not null, schoolclass varchar(255), subject varchar(255), primary key (id))"; expected "identifier"; SQL statement:
+create table sk_lessons (id bigint not null, day varchar(255), lesson_number integer not null, schoolclass varchar(255), subject varchar(255), primary key (id)) [42001-224]
+2024-04-10 08:04:27.581154Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SK_LESSONS" not found; SQL statement:
+insert into sk_lessons (day,lesson_number,schoolclass,subject,id) values (?,?,?,?,?) [42102-224]
+2024-04-10 08:04:49.125138Z database: wrong user or password; user: "ROOT"
+org.h2.message.DbException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at org.h2.server.web.WebApp.process(WebApp.java:227)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 54 more
