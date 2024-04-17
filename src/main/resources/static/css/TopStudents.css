@@ -1,0 +1,58 @@
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    font-size: 14px;
+}
+
+/* Header styling */
+.Header {
+    background-color: teal;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.Header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Styling for each section */
+.section {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 17px;
+    margin-bottom: 23px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    color: teal;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+    background-color: teal;
+    color: white;
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

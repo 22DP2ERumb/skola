@@ -64,4 +64,8 @@ public class User {
     {
         return schoolClass;
     }
+    public String getSubject()
+    {
+        return subject;
+    }
 }

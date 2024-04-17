@@ -52,11 +52,17 @@ public class UserProfileController {
         }
     }
     @GetMapping("/grades")
-    public String grades()
+    public String grades(Model model)
     {
         user = userRepository.findByIsActiveTrue();
         if (user != null)
         {
+            model.addAttribute("role", user.getLore());
+            if (user.getLore().equals("Teacher"))
+            {
+                model.addAttribute("subject", user.getSubject());
+                return "GradeStudent";
+            }
             return "Grades";
         }
         else
@@ -65,27 +71,33 @@ public class UserProfileController {
         }
     }
     @GetMapping("/lessons")
-    public String lessons(Model model)
+    public String lessons(Model model, @RequestParam(value = "day", defaultValue = "Monday") String day)
     {
         user = userRepository.findByIsActiveTrue();
         if (user != null)
         {
-            // String grupa = user.getSchoolClass();
+            String grupa = user.getSchoolClass();
 
-            // String Subject1 = lessonsRepository.findByLessonNumberAndSchoolclass(1, grupa);
+            Lessons lessons = lessonsRepository.findBySchoolClassAndSchoolDay(grupa, day);
+            model.addAttribute("day", day); 
+            model.addAttribute("role", user.getLore());
+            if (lessons != null)
+            {
+                model.addAttribute("Subject1", lessons.lesson1);
+                model.addAttribute("Subject2", lessons.lesson2);
+                model.addAttribute("Subject3", lessons.lesson3);
+                model.addAttribute("Subject4", lessons.lesson4);
+                model.addAttribute("Subject5", lessons.lesson5);
+                model.addAttribute("Subject6", lessons.lesson6);
+                model.addAttribute("Subject7", lessons.lesson7);
+                model.addAttribute("Subject8", lessons.lesson8);
+                model.addAttribute("Subject9", lessons.lesson9);
+                model.addAttribute("Subject10", lessons.lesson10);
+                model.addAttribute("Subject11", lessons.lesson11);
+                model.addAttribute("Subject12", lessons.lesson12);
+ 
+            }
 
-            // model.addAttribute("Subject1", Subject1 );
-            // model.addAttribute("Subject2", Subject2);
-            // model.addAttribute("Subject3", Subject3);
-            // model.addAttribute("Subject4", Subject4);
-            // model.addAttribute("Subject5", Subject5);
-            // model.addAttribute("Subject6", Subject6);
-            // model.addAttribute("Subject7", Subject7);
-            // model.addAttribute("Subject8", Subject8);
-            // model.addAttribute("Subject9", Subject9);
-            // model.addAttribute("Subject10", Subject10);
-            // model.addAttribute("Subject11", Subject11);
-            // model.addAttribute("Subject12", Subject12);
             return "Lessons";
         }
         else
@@ -94,11 +106,12 @@ public class UserProfileController {
         }
     }
     @GetMapping("/support")
-    public String support()
+    public String support(Model model)
     {
         user = userRepository.findByIsActiveTrue();
         if (user != null)
         {
+            model.addAttribute("role", user.getLore());
             return "support";
         }
         else
@@ -121,10 +134,30 @@ public class UserProfileController {
     }
 
     @PostMapping ("/lessonManager")
-    public String lessonManager(@RequestParam("LessonNumber") int LessonNumber, @RequestParam("Subject") String Subject, @RequestParam("schoolclass") String schoolclass, @RequestParam("Day") String Day )
+    public String lessonManager(@RequestParam("lesson1") String lesson1, @RequestParam("lesson2") String lesson2, @RequestParam("lesson3") String lesson3, @RequestParam("lesson4") String lesson4, @RequestParam("lesson5") String lesson5, @RequestParam("lesson6") String lesson6, @RequestParam("lesson7") String lesson7, @RequestParam("lesson8") String lesson8, @RequestParam("lesson9") String lesson9, @RequestParam("lesson10") String lesson10, @RequestParam("lesson11") String lesson11, @RequestParam("lesson12") String lesson12, @RequestParam("schoolClass") String schoolClass, @RequestParam("schoolDay") String schoolDay)
     {
-        Lessons lessons = new Lessons(LessonNumber, Subject, schoolclass, Day);
-        lessonsRepository.save(lessons);
+        Lessons lessons = lessonsRepository.findBySchoolClassAndSchoolDay(schoolClass, schoolDay);
+        if (lessons == null)
+        {
+            Lessons lesson = new Lessons(lesson1, lesson2, lesson3, lesson4, lesson5, lesson6, lesson7, lesson8, lesson9, lesson10, lesson11, lesson12, schoolClass, schoolDay);
+            lessonsRepository.save(lesson);
+        }
+        else
+        {
+            lessons.lesson1 = lesson1;
+            lessons.lesson2 = lesson2;
+            lessons.lesson3 = lesson3;
+            lessons.lesson4 = lesson4;
+            lessons.lesson5 = lesson5;
+            lessons.lesson6 = lesson6;
+            lessons.lesson7 = lesson7;
+            lessons.lesson8 = lesson8;
+            lessons.lesson9 = lesson9;
+            lessons.lesson10 = lesson10;
+            lessons.lesson11 = lesson11;
+            lessons.lesson12 = lesson12;
+            lessonsRepository.save(lessons);
+        }
         return "redirect:/lessonManager";
     }
 }

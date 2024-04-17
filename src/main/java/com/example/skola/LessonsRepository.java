@@ -5,5 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LessonsRepository extends CrudRepository<Lessons, Long> {
-    Lessons findByLessonNumberAndSchoolclass(int lessonNumber, String schoolclass);
+    Lessons findBySchoolClassAndSchoolDay(String schoolClass, String schoolDay);
+    
 }

@@ -2304,3 +2304,87 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 54 more
+2024-04-17 06:10:25.014255Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:10:29.765355Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:10:34.615039Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:10:39.779996Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:10:42.781321Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:10:46.142273Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:10:51.777832Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:11:04.317235Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:11:11.683731Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:11:42.323834Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:11:48.006934Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:11:51.701595Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:11:57.423047Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:00.889324Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:06.215003Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:09.072931Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:13.097780Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:16.846886Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:19.754036Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:24.171270Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:28.487838Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:34.207622Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:48.923349Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:53.027763Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:12:59.530548Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:13:06.667257Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:13:12.395592Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]
+2024-04-17 06:13:15.097949Z jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table if exists sk_lessons add column [*]group varchar(255)"; expected "identifier"; SQL statement:
+alter table if exists sk_lessons add column group varchar(255) [42001-224]

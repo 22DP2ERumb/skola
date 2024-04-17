@@ -16,6 +16,9 @@
             <a href="/lessons">Lessons</a>
             <a href="/grades" class="active">Grades</a>
             <a href="/profile">Profile</a>
+            <span th:if="${role == 'MacibuDala'}">
+                <a href="/lessonManager">Lesson Manager</a>
+            </span>
 
         </form>
         <div class="table-container">
@@ -28,18 +31,18 @@
                         <th>Grade 3</th>
                         <th>Grade 4</th>
                         <th>Grade 5</th>
-                        <th>Average</th>
+                        <th style="background-color: teal;">Average</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Programming</td>
+                        <td>Science</td>
                         <td>9</td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <th></th>
                     </tr>
                     <tr>
                         <td>Mathematics</td>
@@ -48,25 +51,43 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <th></th>
                     </tr>
                     <tr>
-                        <td>Database</td>
+                        <td>History</td>
                         <td>9</td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <th></th>
                     </tr>
                     <tr>
-                        <td>Languages</td>
+                        <td>English</td>
                         <td>9</td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Sport</td>
+                        <td>9</td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Computer Science</td>
+                        <td>9</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <th></th>
                     </tr>
                 </tbody>
             </table>

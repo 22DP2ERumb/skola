@@ -43,16 +43,17 @@ body {
     margin-top: 20px; /* Adjust margin for spacing */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px; /* Adjust margin for spacing */
+.table-container table {
+    width: 100%; /* Set table width to 100% */
+    table-layout: fixed; /* Use fixed layout for consistent cell widths */
 }
 
 th, td {
     border: 1px solid #dddddd;
     text-align: center;
     padding: 8px;
+    width: 33%; /* Set fixed width for each cell */
+    word-wrap: break-word; /* Allow long words to break and wrap */
 }
 
 th {
@@ -65,4 +66,19 @@ th {
 .blank-line {
     margin-bottom: 20px; 
     height: 20px; 
+}
+
+.submit{
+    color: #fff;
+    background-color: teal;
+}
+
+.day{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
 }

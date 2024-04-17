@@ -149,3 +149,24 @@ th {
     background-color: #009670;
 }
 
+.arr{
+    background-color: #009670;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 15px;
+    transition: 0.4s ease;
+}
+
+.arr:hover{
+    box-shadow: 0px 0px 20px 20px rgba(22, 0, 0, 0);
+}
+
+.arr div{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-top: 8px solid #202020;
+    border-left: 8px solid #202020;
+    transform: rotate(45deg);
+}

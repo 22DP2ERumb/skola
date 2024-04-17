@@ -12,9 +12,9 @@
     <div class="main">
         <form class="topbar">
             <a href="/logout">Logout</a>
-            <a href="/support" class="active">Support</a>
+            <a href="/support">Support</a>
             <a href="/lessons">Lessons</a>
-            <a href="/grades">Grades</a>
+            <a href="/grades" class ="active">Grades</a>
             <a href="/profile">Profile</a>
             <span th:if="${role == 'MacibuDala'}">
                 <a href="/lessonManager">Lesson Manager</a>
@@ -22,19 +22,16 @@
 
         </form>
         <div class="table-container">
-            <!-- Support Form -->
-            <div class="support-form">
-                <h1>Support Form</h1>
-                <form>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <textarea id="message" placeholder="Your Message" required></textarea>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+            <span th:if="${subject == 'Mathematics'}">
+                sdfsdfsdfsdf
+            </span>
+            <span th:if="${subject == 'Science'}">
+                asdfsadfsdf
+            </span>
         </div>
     </div>
 </div>
 
 </body>
 </html>
+
