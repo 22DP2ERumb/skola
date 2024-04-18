@@ -1,5 +1,7 @@
 package com.example.skola;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,7 +54,7 @@ public class UserProfileController {
         }
     }
     @GetMapping("/grades")
-    public String grades(Model model)
+    public String grades(Model model,  @RequestParam(value = "Group", defaultValue = "DP1-1") String schoolGroup)
     {
         user = userRepository.findByIsActiveTrue();
         if (user != null)
@@ -60,7 +62,14 @@ public class UserProfileController {
             model.addAttribute("role", user.getLore());
             if (user.getLore().equals("Teacher"))
             {
-                model.addAttribute("subject", user.getSubject());
+                model.addAttribute("subject", user.getSubject()); // Probably not needed !!!
+
+                List<User> userList = userRepository.findByLoreAndSchoolClass("Student", schoolGroup); // Change variables !!!
+                
+                for (int i = 0; i < userList.size(); i++) {
+                    model.addAttribute("FullName" + (i + 1), userList.get(i).getFullName()); // Need request from client witch group.
+                }
+                
                 return "GradeStudent";
             }
             return "Grades";

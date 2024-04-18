@@ -33,7 +33,7 @@ public class User {
         this.emails = emails;
         this.numurs = numurs;
         isActive = false;
-        lore = null;
+        lore = "Empty";
         subject = null;
         this.schoolClass = schoolClass;
     }
