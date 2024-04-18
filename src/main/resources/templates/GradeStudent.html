@@ -19,11 +19,145 @@
             <span th:if="${role == 'MacibuDala'}">
                 <a href="/lessonManager">Lesson Manager</a>
             </span>
-
+        
         </form>
         <div class="table-container">
+            <form action="" method="GET">
+                <label for="Group">Group:</label><br>
+                <input list="groups" name="Group" id="Group">
+                <datalist id="groups">
+                    <option value="DP1-1">
+                    <option value="DP1-2">
+                    <option value="DP1-3">
+                    <option value="DP1-4">
+                </datalist>
+                <input class="submit" type="submit" value="Submit">
+                <br><br>
+                <div class="Group"><p th:text="${group}"></p><div class="Subject"><p th:text="${subject}"></p></div></div><br><br>
+            </form>
             <span th:if="${subject == 'Mathematics'}">
-                sdfsdfsdfsdf
+                <div class="grade-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Name and surname</th>
+                                <th>Grade 1</th>
+                                <th>Grade 2</th>
+                                <th>Grade 3</th>
+                                <th>Grade 4</th>
+                                <th>Grade 5</th>
+                                <th style="background-color: teal;">Average</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td><p th:text="${FullName1}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>2.</td>
+                                <td><p th:text="${FullName2}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>3.</td>
+                                <td><p th:text="${FullName3}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>4.</td>
+                                <td><p th:text="${FullName4}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>5.</td>
+                                <td><p th:text="${FullName5}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>7.</td>
+                                <td><p th:text="${FullName7}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>8.</td>
+                                <td><p th:text="${FullName8}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>9.</td>
+                                <td><p th:text="${FullName9}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>10.</td>
+                                <td><p th:text="${FullName10}"></p></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <th></th>
+                            </tr>
+                        </tbody>
             </span>
             <span th:if="${subject == 'Science'}">
                 asdfsadfsdf

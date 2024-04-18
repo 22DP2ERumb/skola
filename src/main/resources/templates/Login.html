@@ -25,6 +25,7 @@
             <input type="email" placeholder="E-mail" id="emails" name="emails" style="background-color: white;"><i class="bx bxs-user"></i><br>
             <label>Password</label>
             <input type="password" placeholder="Password" id = "parole" name = "parole" style="background-color: white;"><i class="bx bxs-lock-alt"></i><br>
+            <p style="color: red;" th:if="${error}" th:text="${error}"></p>
             <p><a href="/forgotpassword">Forgot password?</a></p>
             <button type ="submit">LOGIN</button>
             <p>Don't have an account? <a href="/registration">Register</a></p>
