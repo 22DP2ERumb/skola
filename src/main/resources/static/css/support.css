@@ -186,7 +186,7 @@ th {
 .table-container tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-
+.table-container input[type="number"],
 .table-container input[type="text"] {
     width: 50px;
     padding: 8px;

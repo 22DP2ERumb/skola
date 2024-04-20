@@ -17,6 +17,9 @@ public class UserProfileController {
     @Autowired
     private LessonsRepository lessonsRepository;
 
+    @Autowired
+    private GradesRepository gradesRepository;
+
 
     private User user;
     
@@ -53,6 +56,7 @@ public class UserProfileController {
             return "redirect:/login";
         }
     }
+
     @GetMapping("/grades")
     public String grades(Model model,  @RequestParam(value = "Group", defaultValue = "DP1-1") String schoolGroup)
     {
@@ -68,9 +72,42 @@ public class UserProfileController {
                 
                 for (int i = 0; i < userList.size(); i++) {
                     model.addAttribute("FullName" + (i + 1), userList.get(i).getFullName()); // Need request from client witch group.
+
+                    String UserEmail = userList.get(i).getEmails();
+                    Grades grades = gradesRepository.findByStudentEmail(UserEmail);
+
+
+                    // prolly need another cikls
+                    if (grades != null)
+                    {
+                        if(user.getSubject().equals("Mathematics"))
+                        {
+                            model.addAttribute("Grade1" + (i + 1), grades.mathematicsGrade1);
+                            model.addAttribute("Grade2" + (i + 1), grades.mathematicsGrade2);
+                            model.addAttribute("Grade3" + (i + 1), grades.mathematicsGrade3);
+                            model.addAttribute("Grade4" + (i + 1), grades.mathematicsGrade4);
+                            model.addAttribute("Grade5" + (i + 1), grades.mathematicsGrade5);
+                            double average = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
+                            model.addAttribute("Average" + (i + 1), average);
+                        }
+                    }
                 }
-                
                 return "GradeStudent";
+            }
+            else if (user.getLore().equals("Student"))
+            {
+                String UserEmail = user.getEmails();
+                Grades grades = gradesRepository.findByStudentEmail(UserEmail);
+                model.addAttribute("Math1", grades.mathematicsGrade1);
+                model.addAttribute("Math2", grades.mathematicsGrade2);
+                model.addAttribute("Math3", grades.mathematicsGrade3);
+                model.addAttribute("Math4", grades.mathematicsGrade4);
+                model.addAttribute("Math5", grades.mathematicsGrade5);
+
+                double average = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
+                model.addAttribute("MathAverage", average);
+                
+
             }
             return "Grades";
         }

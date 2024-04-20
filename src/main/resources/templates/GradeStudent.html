@@ -54,35 +54,57 @@
                             <tr>
                                 <td>1.</td>
                                 <td><p th:text="${FullName1}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <th></th>
+
+                                <td th:if="${Grade11 == -1}"><input type="number" min="1" max="10" id ="Grade11" name = "Grade11"></td>
+                                <td th:if="${Grade11 != -1}" th:text="${Grade11}"></td>
+                                
+                                <td th:if="${Grade21 == -1}"><input type="number" min="1" max="10" id ="Grade21" name = "Grade21"></td>
+                                <td th:if="${Grade21 != -1}" th:text="${Grade21}"></td>
+
+                                <td th:if="${Grade31 == -1}"><input type="number" min="1" max="10" id ="Grade31" name = "Grade31"></td>
+                                <td th:if="${Grade31 != -1}" th:text="${Grade31}"></td>
+
+                                <td th:if="${Grade41 == -1}"><input type="number" min="1" max="10" id ="Grade41" name = "Grade41"></td>
+                                <td th:if="${Grade41 != -1}" th:text="${Grade41}"></td>
+
+                                <td th:if="${Grade51 == -1}"><input type="number" min="1" max="10" id ="Grade51" name = "Grade51"></td>
+                                <td th:if="${Grade51 != -1}" th:text="${Grade51}"></td>
+
+                                <th th:text="${Average1}"></th>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>2.</td>
                                 <td><p th:text="${FullName2}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <th></th>
+
+                                <td th:if="${Grade12 == -1}"><input type="number" min="1" max="10" id ="Grade12" name = "Grade12"></td>
+                                <td th:if="${Grade12 != -1}" th:text="${Grade12}"></td>
+                                
+                                <td th:if="${Grade22 == -1}"><input type="number" min="1" max="10" id ="Grade22" name = "Grade22"></td>
+                                <td th:if="${Grade22 != -1}" th:text="${Grade22}"></td>
+
+                                <td th:if="${Grade32 == -1}"><input type="number" min="1" max="10" id ="Grade32" name = "Grade32"></td>
+                                <td th:if="${Grade32 != -1}" th:text="${Grade32}"></td>
+
+                                <td th:if="${Grade42 == -1}"><input type="number" min="1" max="10" id ="Grade42" name = "Grade42"></td>
+                                <td th:if="${Grade42 != -1}" th:text="${Grade42}"></td>
+
+                                <td th:if="${Grade52 == -1}"><input type="number" min="1" max="10" id ="Grade52" name = "Grade52"></td>
+                                <td th:if="${Grade52 != -1}" th:text="${Grade52}"></td>
+
+                                <th th:text="${Average2}"></th>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td>3.</td>
                                 <td><p th:text="${FullName3}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -90,11 +112,11 @@
                             <tr>
                                 <td>4.</td>
                                 <td><p th:text="${FullName4}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -102,11 +124,11 @@
                             <tr>
                                 <td>5.</td>
                                 <td><p th:text="${FullName5}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -114,11 +136,11 @@
                             <tr>
                                 <td>7.</td>
                                 <td><p th:text="${FullName7}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -126,11 +148,11 @@
                             <tr>
                                 <td>8.</td>
                                 <td><p th:text="${FullName8}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -138,11 +160,11 @@
                             <tr>
                                 <td>9.</td>
                                 <td><p th:text="${FullName9}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>
@@ -150,11 +172,11 @@
                             <tr>
                                 <td>10.</td>
                                 <td><p th:text="${FullName10}"></p></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
-                                <td><input type="text"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
+                                <td><input type="number" min="1" max="10"></td>
                                 <th></th>
                             </tr>
                         </tbody>

@@ -37,7 +37,7 @@
                 <tbody>
                     <tr>
                         <td>Science</td>
-                        <td>9</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -46,16 +46,28 @@
                     </tr>
                     <tr>
                         <td>Mathematics</td>
-                        <td>9</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th></th>
+                        <td th:if="${Math1 != -1}" th:text="${Math1}"></td>
+                        <td th:if="${Math1 == -1}"></td>
+
+                        <td th:if="${Math2 != -1}" th:text="${Math2}"></td>
+                        <td th:if="${Math2 == -1}"></td>
+
+                        <td th:if="${Math3 != -1}" th:text="${Math3}"></td>
+                        <td th:if="${Math3 == -1}"></td>
+
+                        <td th:if="${Math4 != -1}" th:text="${Math4}"></td>
+                        <td th:if="${Math4 == -1}"></td>
+
+                        <td th:if="${Math5 != -1}" th:text="${Math5}"></td>
+                        <td th:if="${Math5 == -1}"></td>
+
+                        <th th:text="${MathAverage}"></th>
+
+    
                     </tr>
                     <tr>
                         <td>History</td>
-                        <td>9</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -64,7 +76,7 @@
                     </tr>
                     <tr>
                         <td>English</td>
-                        <td>9</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -73,7 +85,7 @@
                     </tr>
                     <tr>
                         <td>Sport</td>
-                        <td>9</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -82,7 +94,7 @@
                     </tr>
                     <tr>
                         <td>Computer Science</td>
-                        <td>9</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
