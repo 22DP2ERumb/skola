@@ -98,6 +98,16 @@ public class UserProfileController {
             {
                 String UserEmail = user.getEmails();
                 Grades grades = gradesRepository.findByStudentEmail(UserEmail);
+                model.addAttribute("Science1", grades.scienceGrade1);
+                model.addAttribute("Science2", grades.scienceGrade2);
+                model.addAttribute("Science3", grades.scienceGrade3);
+                model.addAttribute("Science4", grades.scienceGrade4);
+                model.addAttribute("Science5", grades.scienceGrade5);
+
+                double Scienceaverage = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
+                model.addAttribute("ScienceAverage", Scienceaverage);
+
+
                 model.addAttribute("Math1", grades.mathematicsGrade1);
                 model.addAttribute("Math2", grades.mathematicsGrade2);
                 model.addAttribute("Math3", grades.mathematicsGrade3);

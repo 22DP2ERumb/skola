@@ -37,12 +37,22 @@
                 <tbody>
                     <tr>
                         <td>Science</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th></th>
+                        <td th:if="${Science1 != -1}" th:text="${Science1}"></td>
+                        <td th:if="${Science1 == -1}"></td>
+
+                        <td th:if="${Science2 != -1}" th:text="${Science2}"></td>
+                        <td th:if="${Science2 == -1}"></td>
+
+                        <td th:if="${Science3 != -1}" th:text="${Science3}"></td>
+                        <td th:if="${Science3 == -1}"></td>
+
+                        <td th:if="${Science4 != -1}" th:text="${Science4}"></td>
+                        <td th:if="${Science4 == -1}"></td>
+
+                        <td th:if="${Science5 != -1}" th:text="${Science5}"></td>
+                        <td th:if="${Science5 == -1}"></td>
+
+                        <th th:text="${ScienceAverage}"></th>
                     </tr>
                     <tr>
                         <td>Mathematics</td>
@@ -67,39 +77,79 @@
                     </tr>
                     <tr>
                         <td>History</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th></th>
+                        <td th:if="${History1 != -1}" th:text="${History1}"></td>
+                        <td th:if="${History1 == -1}"></td>
+
+                        <td th:if="${History2 != -1}" th:text="${History2}"></td>
+                        <td th:if="${History2 == -1}"></td>
+
+                        <td th:if="${History3 != -1}" th:text="${History3}"></td>
+                        <td th:if="${History3 == -1}"></td>
+
+                        <td th:if="${History4 != -1}" th:text="${History4}"></td>
+                        <td th:if="${History4 == -1}"></td>
+
+                        <td th:if="${History5 != -1}" th:text="${History5}"></td>
+                        <td th:if="${History5 == -1}"></td>
+
+                        <th th:text="${HistoryAverage}"></th>
                     </tr>
                     <tr>
                         <td>English</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th></th>
+                        <td th:if="${English1 != -1}" th:text="${English1}"></td>
+                        <td th:if="${English1 == -1}"></td>
+
+                        <td th:if="${English2 != -1}" th:text="${English2}"></td>
+                        <td th:if="${English2 == -1}"></td>
+
+                        <td th:if="${English3 != -1}" th:text="${English3}"></td>
+                        <td th:if="${English3 == -1}"></td>
+
+                        <td th:if="${English4 != -1}" th:text="${English4}"></td>
+                        <td th:if="${English4 == -1}"></td>
+
+                        <td th:if="${English5 != -1}" th:text="${English5}"></td>
+                        <td th:if="${English5 == -1}"></td>
+
+                        <th th:text="${EnglishAverage}"></th>
                     </tr>
                     <tr>
                         <td>Sport</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th></th>
+                        <td th:if="${Sport1 != -1}" th:text="${Sport1}"></td>
+                        <td th:if="${Sport1 == -1}"></td>
+
+                        <td th:if="${Sport2 != -1}" th:text="${Sport2}"></td>
+                        <td th:if="${Sport2 == -1}"></td>
+
+                        <td th:if="${Sport3 != -1}" th:text="${Sport3}"></td>
+                        <td th:if="${Sport3 == -1}"></td>
+
+                        <td th:if="${Sport4 != -1}" th:text="${Sport4}"></td>
+                        <td th:if="${Sport4 == -1}"></td>
+
+                        <td th:if="${Sport5 != -1}" th:text="${Sport5}"></td>
+                        <td th:if="${Sport5 == -1}"></td>
+
+                        <th th:text="${SportAverage}"></th>
                     </tr>
                     <tr>
                         <td>Computer Science</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <th></th>
+                        <td th:if="${Computer1 != -1}" th:text="${Computer1}"></td>
+                        <td th:if="${Computer1 == -1}"></td>
+
+                        <td th:if="${Computer2 != -1}" th:text="${Computer2}"></td>
+                        <td th:if="${Computer2 == -1}"></td>
+
+                        <td th:if="${Computer3 != -1}" th:text="${Computer3}"></td>
+                        <td th:if="${Computer3 == -1}"></td>
+
+                        <td th:if="${Computer4 != -1}" th:text="${Computer4}"></td>
+                        <td th:if="${Computer4 == -1}"></td>
+
+                        <td th:if="${Computer5 != -1}" th:text="${Computer5}"></td>
+                        <td th:if="${Computer5 == -1}"></td>
+
+                        <th th:text="${ComputerAverage}"></th>
                     </tr>
                 </tbody>
             </table>
