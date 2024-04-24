@@ -1,4 +1,4 @@
-        package com.example.skola;
+package com.example.skola;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

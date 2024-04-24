@@ -95,6 +95,28 @@ public class UserProfileController {
                             double average = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
                             model.addAttribute("Average" + (i + 1), average);
                         }
+
+                        if(user.getSubject().equals("Science"))
+                        {
+                            model.addAttribute("Grade1" + (i + 1), grades.scienceGrade1);
+                            model.addAttribute("Grade2" + (i + 1), grades.scienceGrade2);
+                            model.addAttribute("Grade3" + (i + 1), grades.scienceGrade3);
+                            model.addAttribute("Grade4" + (i + 1), grades.scienceGrade4);
+                            model.addAttribute("Grade5" + (i + 1), grades.scienceGrade5);
+                            double average = Functions.CalculateAverage(grades.scienceGrade1, grades.scienceGrade2, grades.scienceGrade3, grades.scienceGrade4, grades.scienceGrade5);
+                            model.addAttribute("Average" + (i + 1), average);
+                        }
+
+                        if(user.getSubject().equals("History"))
+                        {
+                            model.addAttribute("Grade1" + (i + 1), grades.historyGrade1);
+                            model.addAttribute("Grade2" + (i + 1), grades.historyGrade2);
+                            model.addAttribute("Grade3" + (i + 1), grades.historyGrade3);
+                            model.addAttribute("Grade4" + (i + 1), grades.historyGrade4);
+                            model.addAttribute("Grade5" + (i + 1), grades.historyGrade5);
+                            double average = Functions.CalculateAverage(grades.historyGrade1, grades.historyGrade2, grades.historyGrade3, grades.historyGrade4, grades.historyGrade5);
+                            model.addAttribute("Average" + (i + 1), average);
+                        }
                     }
                 }
                 return "GradeStudent";
@@ -172,7 +194,8 @@ public class UserProfileController {
     public String grades(@RequestParam Map<String, String> allParams)
     {
         user = userRepository.findByIsActiveTrue();
-        List<User> userList = userRepository.findByLoreAndSchoolClass("Student", allParams.get("group"));
+        String group = allParams.get("group");
+        List<User> userList = userRepository.findByLoreAndSchoolClass("Student", group);
 
         for (int i = 0; i < userList.size(); i++) 
         {
@@ -187,17 +210,29 @@ public class UserProfileController {
                 String grade4 = allParams.get("Grade4" + (i + 1));
                 String grade5 = allParams.get("Grade5" + (i + 1));
 
-                if (grade1 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade1);}
-                if (grade2 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade2);}
-                if (grade3 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade3);}
-                if (grade4 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade4);}
-                if (grade5 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade5);}
+                if (grade1 != null && grade1 != ""){studentGrades.mathematicsGrade1 = Integer.parseInt(grade1); gradesRepository.save(studentGrades);}
+                if (grade2 != null && grade2 != ""){studentGrades.mathematicsGrade2 = Integer.parseInt(grade2); gradesRepository.save(studentGrades);}
+                if (grade3 != null && grade3 != ""){studentGrades.mathematicsGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
+                if (grade4 != null && grade4 != ""){studentGrades.mathematicsGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
+                if (grade5 != null && grade5 != ""){studentGrades.mathematicsGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+            }
 
+            if(user.getSubject().equals("Science"))
+            {
+                String studentEmail = allParams.get("Email" + (i + 1));
+                Grades studentGrades = gradesRepository.findByStudentEmail(studentEmail);
 
+                String grade1 = allParams.get("Grade1" + (i + 1));
+                String grade2 = allParams.get("Grade2" + (i + 1));
+                String grade3 = allParams.get("Grade3" + (i + 1));
+                String grade4 = allParams.get("Grade4" + (i + 1));
+                String grade5 = allParams.get("Grade5" + (i + 1));
 
-                gradesRepository.save(studentGrades);
-
-
+                if (grade1 != null && grade1 != ""){studentGrades.scienceGrade1 = Integer.parseInt(grade1); gradesRepository.save(studentGrades);}
+                if (grade2 != null && grade2 != ""){studentGrades.scienceGrade2 = Integer.parseInt(grade2); gradesRepository.save(studentGrades);}
+                if (grade3 != null && grade3 != ""){studentGrades.scienceGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
+                if (grade4 != null && grade4 != ""){studentGrades.scienceGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
+                if (grade5 != null && grade5 != ""){studentGrades.scienceGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
             }
             
         }
@@ -208,7 +243,7 @@ public class UserProfileController {
         // for (int i = 0; i < userList.size(); i++) {
             
         // }
-        return "redirect:/grades";
+        return "redirect:/grades?Group=" + group;
     }
 
     @GetMapping("/lessons")
