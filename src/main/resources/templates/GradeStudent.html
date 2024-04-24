@@ -22,7 +22,7 @@
         
         </form>
         <div class="table-container">
-            <form action="" method="GET">
+            <form action="/grades" method="GET">
                 <label for="Group">Group:</label><br>
                 <input list="groups" name="Group" id="Group">
                 <datalist id="groups">
@@ -35,155 +35,262 @@
                 <br><br>
                 <div class="Group"><p th:text="${group}"></p><div class="Subject"><p th:text="${subject}"></p></div></div><br><br>
             </form>
-            <span th:if="${subject == 'Mathematics'}">
                 <div class="grade-container">
                     <table>
-                        <thead>
-                            <tr>
-                                <th>Student</th>
-                                <th>Name and surname</th>
-                                <th>Grade 1</th>
-                                <th>Grade 2</th>
-                                <th>Grade 3</th>
-                                <th>Grade 4</th>
-                                <th>Grade 5</th>
-                                <th style="background-color: teal;">Average</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1.</td>
-                                <td><p th:text="${FullName1}"></p></td>
+                        <form action="/grades" method="post">
+                            <input type="hidden" name="group" th:value="${group}" />
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Name and surname</th>
+                                    <th>Grade 1</th>
+                                    <th>Grade 2</th>
+                                    <th>Grade 3</th>
+                                    <th>Grade 4</th>
+                                    <th>Grade 5</th>
+                                    <th style="background-color: teal;">Average</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td><p th:text="${FullName1}"></p></td>
+                                    <input type="hidden" name="Email1" th:value="${Email1}"/>
 
-                                <td th:if="${Grade11 == -1}"><input type="number" min="1" max="10" id ="Grade11" name = "Grade11"></td>
-                                <td th:if="${Grade11 != -1}" th:text="${Grade11}"></td>
-                                
-                                <td th:if="${Grade21 == -1}"><input type="number" min="1" max="10" id ="Grade21" name = "Grade21"></td>
-                                <td th:if="${Grade21 != -1}" th:text="${Grade21}"></td>
+                                    <td th:if="${Grade11 == -1}"><input type="number" min="0" max="10" id ="Grade11" name = "Grade11"></td>
+                                    <td th:if="${Grade11 != -1}" th:text="${Grade11}"></td>
+                                    
+                                    <td th:if="${Grade21 == -1}"><input type="number" min="0" max="10" id ="Grade21" name = "Grade21"></td>
+                                    <td th:if="${Grade21 != -1}" th:text="${Grade21}"></td>
 
-                                <td th:if="${Grade31 == -1}"><input type="number" min="1" max="10" id ="Grade31" name = "Grade31"></td>
-                                <td th:if="${Grade31 != -1}" th:text="${Grade31}"></td>
+                                    <td th:if="${Grade31 == -1}"><input type="number" min="0" max="10" id ="Grade31" name = "Grade31"></td>
+                                    <td th:if="${Grade31 != -1}" th:text="${Grade31}"></td>
 
-                                <td th:if="${Grade41 == -1}"><input type="number" min="1" max="10" id ="Grade41" name = "Grade41"></td>
-                                <td th:if="${Grade41 != -1}" th:text="${Grade41}"></td>
+                                    <td th:if="${Grade41 == -1}"><input type="number" min="0" max="10" id ="Grade41" name = "Grade41"></td>
+                                    <td th:if="${Grade41 != -1}" th:text="${Grade41}"></td>
 
-                                <td th:if="${Grade51 == -1}"><input type="number" min="1" max="10" id ="Grade51" name = "Grade51"></td>
-                                <td th:if="${Grade51 != -1}" th:text="${Grade51}"></td>
+                                    <td th:if="${Grade51 == -1}"><input type="number" min="0" max="10" id ="Grade51" name = "Grade51"></td>
+                                    <td th:if="${Grade51 != -1}" th:text="${Grade51}"></td>
 
-                                <th th:text="${Average1}"></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>2.</td>
-                                <td><p th:text="${FullName2}"></p></td>
+                                    <th th:text="${Average1}"></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>2.</td>
+                                    <td><p th:text="${FullName2}"></p></td>
+                                    <input type="hidden" name="Email2" th:value="${Email2}"/>
 
-                                <td th:if="${Grade12 == -1}"><input type="number" min="1" max="10" id ="Grade12" name = "Grade12"></td>
-                                <td th:if="${Grade12 != -1}" th:text="${Grade12}"></td>
-                                
-                                <td th:if="${Grade22 == -1}"><input type="number" min="1" max="10" id ="Grade22" name = "Grade22"></td>
-                                <td th:if="${Grade22 != -1}" th:text="${Grade22}"></td>
+                                    <td th:if="${Grade12 == -1}"><input type="number" min="0" max="10" id ="Grade12" name = "Grade12"></td>
+                                    <td th:if="${Grade12 != -1}" th:text="${Grade12}"></td>
+                                    
+                                    <td th:if="${Grade22 == -1}"><input type="number" min="0" max="10" id ="Grade22" name = "Grade22"></td>
+                                    <td th:if="${Grade22 != -1}" th:text="${Grade22}"></td>
 
-                                <td th:if="${Grade32 == -1}"><input type="number" min="1" max="10" id ="Grade32" name = "Grade32"></td>
-                                <td th:if="${Grade32 != -1}" th:text="${Grade32}"></td>
+                                    <td th:if="${Grade32 == -1}"><input type="number" min="0" max="10" id ="Grade32" name = "Grade32"></td>
+                                    <td th:if="${Grade32 != -1}" th:text="${Grade32}"></td>
 
-                                <td th:if="${Grade42 == -1}"><input type="number" min="1" max="10" id ="Grade42" name = "Grade42"></td>
-                                <td th:if="${Grade42 != -1}" th:text="${Grade42}"></td>
+                                    <td th:if="${Grade42 == -1}"><input type="number" min="0" max="10" id ="Grade42" name = "Grade42"></td>
+                                    <td th:if="${Grade42 != -1}" th:text="${Grade42}"></td>
 
-                                <td th:if="${Grade52 == -1}"><input type="number" min="1" max="10" id ="Grade52" name = "Grade52"></td>
-                                <td th:if="${Grade52 != -1}" th:text="${Grade52}"></td>
+                                    <td th:if="${Grade52 == -1}"><input type="number" min="0" max="10" id ="Grade52" name = "Grade52"></td>
+                                    <td th:if="${Grade52 != -1}" th:text="${Grade52}"></td>
 
-                                <th th:text="${Average2}"></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>3.</td>
-                                <td><p th:text="${FullName3}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>4.</td>
-                                <td><p th:text="${FullName4}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>5.</td>
-                                <td><p th:text="${FullName5}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>7.</td>
-                                <td><p th:text="${FullName7}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>8.</td>
-                                <td><p th:text="${FullName8}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>9.</td>
-                                <td><p th:text="${FullName9}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>10.</td>
-                                <td><p th:text="${FullName10}"></p></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <td><input type="number" min="1" max="10"></td>
-                                <th></th>
-                            </tr>
-                        </tbody>
-            </span>
-            <span th:if="${subject == 'Science'}">
-                asdfsadfsdf
-            </span>
+                                    <th th:text="${Average2}"></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>3.</td>
+                                    <td><p th:text="${FullName3}"></p></td>
+                                    <input type="hidden" name="Email3" th:value="${Email3}"/>
+
+                                    <td th:if="${Grade13 == -1}"><input type="number" min="0" max="10" id="Grade13" name="Grade13"></td>
+                                    <td th:if="${Grade13 != -1}" th:text="${Grade13}"></td>
+
+                                    <td th:if="${Grade23 == -1}"><input type="number" min="0" max="10" id="Grade23" name="Grade23"></td>
+                                    <td th:if="${Grade23 != -1}" th:text="${Grade23}"></td>
+
+                                    <td th:if="${Grade33 == -1}"><input type="number" min="0" max="10" id="Grade33" name="Grade33"></td>
+                                    <td th:if="${Grade33 != -1}" th:text="${Grade33}"></td>
+
+                                    <td th:if="${Grade43 == -1}"><input type="number" min="0" max="10" id="Grade43" name="Grade43"></td>
+                                    <td th:if="${Grade43 != -1}" th:text="${Grade43}"></td>
+
+                                    <td th:if="${Grade53 == -1}"><input type="number" min="0" max="10" id="Grade53" name="Grade53"></td>
+                                    <td th:if="${Grade53 != -1}" th:text="${Grade53}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>4.</td>
+                                    <td><p th:text="${FullName4}"></p></td>
+                                    <input type="hidden" name="Email4" th:value="${Email4}"/>
+
+                                    <td th:if="${Grade14 == -1}"><input type="number" min="0" max="10" id="Grade14" name="Grade14"></td>
+                                    <td th:if="${Grade14 != -1}" th:text="${Grade14}"></td>
+
+                                    <td th:if="${Grade24 == -1}"><input type="number" min="0" max="10" id="Grade24" name="Grade24"></td>
+                                    <td th:if="${Grade24 != -1}" th:text="${Grade24}"></td>
+
+                                    <td th:if="${Grade34 == -1}"><input type="number" min="0" max="10" id="Grade34" name="Grade34"></td>
+                                    <td th:if="${Grade34 != -1}" th:text="${Grade34}"></td>
+
+                                    <td th:if="${Grade44 == -1}"><input type="number" min="0" max="10" id="Grade44" name="Grade44"></td>
+                                    <td th:if="${Grade44 != -1}" th:text="${Grade44}"></td>
+
+                                    <td th:if="${Grade54 == -1}"><input type="number" min="0" max="10" id="Grade54" name="Grade54"></td>
+                                    <td th:if="${Grade54 != -1}" th:text="${Grade54}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>5.</td>
+                                    <td><p th:text="${FullName5}"></p></td>
+                                    <input type="hidden" name="Email5" th:value="${Email5}"/>
+
+                                    <td th:if="${Grade15 == -1}"><input type="number" min="0" max="10" id="Grade15" name="Grade15"></td>
+                                    <td th:if="${Grade15 != -1}" th:text="${Grade15}"></td>
+
+                                    <td th:if="${Grade25 == -1}"><input type="number" min="0" max="10" id="Grade25" name="Grade25"></td>
+                                    <td th:if="${Grade25 != -1}" th:text="${Grade25}"></td>
+
+                                    <td th:if="${Grade35 == -1}"><input type="number" min="0" max="10" id="Grade35" name="Grade35"></td>
+                                    <td th:if="${Grade35 != -1}" th:text="${Grade35}"></td>
+
+                                    <td th:if="${Grade45 == -1}"><input type="number" min="0" max="10" id="Grade45" name="Grade45"></td>
+                                    <td th:if="${Grade45 != -1}" th:text="${Grade45}"></td>
+
+                                    <td th:if="${Grade55 == -1}"><input type="number" min="0" max="10" id="Grade55" name="Grade55"></td>
+                                    <td th:if="${Grade55 != -1}" th:text="${Grade55}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>6.</td>
+                                    <td><p th:text="${FullName6}"></p></td>
+                                    <input type="hidden" name="Email6" th:value="${Email6}"/>
+
+                                    <td th:if="${Grade16 == -1}"><input type="number" min="0" max="10" id="Grade16" name="Grade16"></td>
+                                    <td th:if="${Grade16 != -1}" th:text="${Grade16}"></td>
+
+                                    <td th:if="${Grade26 == -1}"><input type="number" min="0" max="10" id="Grade26" name="Grade26"></td>
+                                    <td th:if="${Grade26 != -1}" th:text="${Grade26}"></td>
+
+                                    <td th:if="${Grade36 == -1}"><input type="number" min="0" max="10" id="Grade36" name="Grade36"></td>
+                                    <td th:if="${Grade36 != -1}" th:text="${Grade36}"></td>
+
+                                    <td th:if="${Grade46 == -1}"><input type="number" min="0" max="10" id="Grade46" name="Grade46"></td>
+                                    <td th:if="${Grade46 != -1}" th:text="${Grade46}"></td>
+
+                                    <td th:if="${Grade56 == -1}"><input type="number" min="0" max="10" id="Grade56" name="Grade56"></td>
+                                    <td th:if="${Grade56 != -1}" th:text="${Grade56}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>7.</td>
+                                    <td><p th:text="${FullName7}"></p></td>
+                                    <input type="hidden" name="Email7" th:value="${Email7}"/>
+
+                                    <td th:if="${Grade17 == -1}"><input type="number" min="0" max="10" id="Grade17" name="Grade17"></td>
+                                    <td th:if="${Grade17 != -1}" th:text="${Grade17}"></td>
+
+                                    <td th:if="${Grade27 == -1}"><input type="number" min="0" max="10" id="Grade27" name="Grade27"></td>
+                                    <td th:if="${Grade27 != -1}" th:text="${Grade27}"></td>
+
+                                    <td th:if="${Grade37 == -1}"><input type="number" min="0" max="10" id="Grade37" name="Grade37"></td>
+                                    <td th:if="${Grade37 != -1}" th:text="${Grade37}"></td>
+
+                                    <td th:if="${Grade47 == -1}"><input type="number" min="0" max="10" id="Grade47" name="Grade47"></td>
+                                    <td th:if="${Grade47 != -1}" th:text="${Grade47}"></td>
+
+                                    <td th:if="${Grade57 == -1}"><input type="number" min="0" max="10" id="Grade57" name="Grade57"></td>
+                                    <td th:if="${Grade57 != -1}" th:text="${Grade57}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>8.</td>
+                                    <td><p th:text="${FullName8}"></p></td>
+                                    <input type="hidden" name="Email8" th:value="${Email8}"/>
+
+                                    <td th:if="${Grade18 == -1}"><input type="number" min="0" max="10" id="Grade18" name="Grade18"></td>
+                                    <td th:if="${Grade18 != -1}" th:text="${Grade18}"></td>
+
+                                    <td th:if="${Grade28 == -1}"><input type="number" min="0" max="10" id="Grade28" name="Grade28"></td>
+                                    <td th:if="${Grade28 != -1}" th:text="${Grade28}"></td>
+
+                                    <td th:if="${Grade38 == -1}"><input type="number" min="0" max="10" id="Grade38" name="Grade38"></td>
+                                    <td th:if="${Grade38 != -1}" th:text="${Grade38}"></td>
+
+                                    <td th:if="${Grade48 == -1}"><input type="number" min="0" max="10" id="Grade48" name="Grade48"></td>
+                                    <td th:if="${Grade48 != -1}" th:text="${Grade48}"></td>
+
+                                    <td th:if="${Grade58 == -1}"><input type="number" min="0" max="10" id="Grade58" name="Grade58"></td>
+                                    <td th:if="${Grade58 != -1}" th:text="${Grade58}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>9.</td>
+                                    <td><p th:text="${FullName9}"></p></td>
+                                    <input type="hidden" name="Email9" th:value="${Email9}"/>
+
+                                    <td th:if="${Grade19 == -1}"><input type="number" min="0" max="10" id="Grade19" name="Grade19"></td>
+                                    <td th:if="${Grade19 != -1}" th:text="${Grade19}"></td>
+
+                                    <td th:if="${Grade29 == -1}"><input type="number" min="0" max="10" id="Grade29" name="Grade29"></td>
+                                    <td th:if="${Grade29 != -1}" th:text="${Grade29}"></td>
+
+                                    <td th:if="${Grade39 == -1}"><input type="number" min="0" max="10" id="Grade39" name="Grade39"></td>
+                                    <td th:if="${Grade39 != -1}" th:text="${Grade39}"></td>
+
+                                    <td th:if="${Grade49 == -1}"><input type="number" min="0" max="10" id="Grade49" name="Grade49"></td>
+                                    <td th:if="${Grade49 != -1}" th:text="${Grade49}"></td>
+
+                                    <td th:if="${Grade59 == -1}"><input type="number" min="0" max="10" id="Grade59" name="Grade59"></td>
+                                    <td th:if="${Grade59 != -1}" th:text="${Grade59}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>10.</td>
+                                    <td><p th:text="${FullName10}"></p></td>
+                                    <input type="hidden" name="Email10" th:value="${Email10}"/>
+
+                                    <td th:if="${Grade110 == -1}"><input type="number" min="0" max="10" id="Grade110" name="Grade110"></td>
+                                    <td th:if="${Grade110 != -1}" th:text="${Grade110}"></td>
+
+                                    <td th:if="${Grade210 == -1}"><input type="number" min="0" max="10" id="Grade210" name="Grade210"></td>
+                                    <td th:if="${Grade210 != -1}" th:text="${Grade210}"></td>
+
+                                    <td th:if="${Grade310 == -1}"><input type="number" min="0" max="10" id="Grade310" name="Grade310"></td>
+                                    <td th:if="${Grade310 != -1}" th:text="${Grade310}"></td>
+
+                                    <td th:if="${Grade410 == -1}"><input type="number" min="0" max="10" id="Grade410" name="Grade410"></td>
+                                    <td th:if="${Grade410 != -1}" th:text="${Grade410}"></td>
+
+                                    <td th:if="${Grade510 == -1}"><input type="number" min="0" max="10" id="Grade510" name="Grade510"></td>
+                                    <td th:if="${Grade510 != -1}" th:text="${Grade510}"></td>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="8"> <!-- span across all columns -->
+                                        <button type="submit">Submit</button> <!-- Submit button -->
+                                    </td>
+                                </tr>
+                            </tfoot>
+                    </form>
         </div>
     </div>
 </div>
