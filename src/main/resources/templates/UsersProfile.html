@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/UserProfile.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>User Profile</title>
 </head>
 <body>
@@ -41,16 +42,9 @@
                                     <h5>Full Name</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
-                                    <p class="fullName"><p th:text="${fullName}"></p></p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h5>Email</h5>
-                                </div>
-                                <div class="col-md-9 text-secondary">
-                                    <p class="email"><p th:text="${Email}"></p></p>
+                                    <p class="fullName"><p th:text="${fullName}"></p>
+                                        <button><i class='bx bxs-pencil'></i></button>
+                                    </p>
                                 </div>
                             </div>
                             <hr>
@@ -59,7 +53,17 @@
                                     <h5>Phone</h5>
                                 </div>
                                 <div class="col-md-9 text-secondary">
-                                    <p class="phone"><p th:text="${numurs}"></p></p>
+                                    <p class="phone"><p th:text="${numurs}"></p>
+                                        <button><i class='bx bxs-pencil'></i></button>
+                                    </p>
+                                </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Email</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <p class="email"><p th:text="${Email}"></p></p>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,7 @@
 package com.example.skola;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import lombok.ToString;
 
 @Controller
 public class UserProfileController {
@@ -60,24 +63,26 @@ public class UserProfileController {
     @GetMapping("/grades")
     public String grades(Model model,  @RequestParam(value = "Group", defaultValue = "DP1-1") String schoolGroup)
     {
+
         user = userRepository.findByIsActiveTrue();
         if (user != null)
         {
             model.addAttribute("role", user.getLore());
             if (user.getLore().equals("Teacher"))
             {
-                model.addAttribute("subject", user.getSubject()); // Probably not needed !!!
+                model.addAttribute("subject", user.getSubject());
+                model.addAttribute("group", schoolGroup);
 
-                List<User> userList = userRepository.findByLoreAndSchoolClass("Student", schoolGroup); // Change variables !!!
+                List<User> userList = userRepository.findByLoreAndSchoolClass("Student", schoolGroup);
                 
                 for (int i = 0; i < userList.size(); i++) {
-                    model.addAttribute("FullName" + (i + 1), userList.get(i).getFullName()); // Need request from client witch group.
+                    model.addAttribute("FullName" + (i + 1), userList.get(i).getFullName());
+                    model.addAttribute("Email" + (i + 1), userList.get(i).getEmails()); // Need request from client witch group.
 
                     String UserEmail = userList.get(i).getEmails();
                     Grades grades = gradesRepository.findByStudentEmail(UserEmail);
 
 
-                    // prolly need another cikls
                     if (grades != null)
                     {
                         if(user.getSubject().equals("Mathematics"))
@@ -104,7 +109,7 @@ public class UserProfileController {
                 model.addAttribute("Science4", grades.scienceGrade4);
                 model.addAttribute("Science5", grades.scienceGrade5);
 
-                double Scienceaverage = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
+                double Scienceaverage = Functions.CalculateAverage(grades.scienceGrade1, grades.scienceGrade2, grades.scienceGrade3, grades.scienceGrade4, grades.scienceGrade5);
                 model.addAttribute("ScienceAverage", Scienceaverage);
 
 
@@ -114,8 +119,44 @@ public class UserProfileController {
                 model.addAttribute("Math4", grades.mathematicsGrade4);
                 model.addAttribute("Math5", grades.mathematicsGrade5);
 
-                double average = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
-                model.addAttribute("MathAverage", average);
+                double MathAverage = Functions.CalculateAverage(grades.mathematicsGrade1, grades.mathematicsGrade2, grades.mathematicsGrade3, grades.mathematicsGrade4, grades.mathematicsGrade5);
+                model.addAttribute("MathAverage", MathAverage);
+
+                model.addAttribute("History1", grades.historyGrade1);
+                model.addAttribute("History2", grades.historyGrade2);
+                model.addAttribute("History3", grades.historyGrade3);
+                model.addAttribute("History4", grades.historyGrade4);
+                model.addAttribute("History5", grades.historyGrade5);
+
+                double HistoryAverage = Functions.CalculateAverage(grades.historyGrade1, grades.historyGrade2, grades.historyGrade3, grades.historyGrade4, grades.historyGrade5);
+                model.addAttribute("HistoryAverage", HistoryAverage);
+
+                model.addAttribute("English1", grades.englishGrade1);
+                model.addAttribute("English2", grades.englishGrade2);
+                model.addAttribute("English3", grades.englishGrade3);
+                model.addAttribute("English4", grades.englishGrade4);
+                model.addAttribute("English5", grades.englishGrade5);
+
+                double EnglishAverage = Functions.CalculateAverage(grades.englishGrade1, grades.englishGrade2, grades.englishGrade3, grades.englishGrade4, grades.englishGrade5);
+                model.addAttribute("EnglishAverage", EnglishAverage);
+                
+                model.addAttribute("Sport1", grades.sportGrade1);
+                model.addAttribute("Sport2", grades.sportGrade2);
+                model.addAttribute("Sport3", grades.sportGrade3);
+                model.addAttribute("Sport4", grades.sportGrade4);
+                model.addAttribute("Sport5", grades.sportGrade5);
+
+                double SportAverage = Functions.CalculateAverage(grades.sportGrade1, grades.sportGrade2, grades.sportGrade3, grades.sportGrade4, grades.sportGrade5);
+                model.addAttribute("SportAverage", SportAverage);
+
+                model.addAttribute("Computer1", grades.computerScienceGrade1);
+                model.addAttribute("Computer2", grades.computerScienceGrade2);
+                model.addAttribute("Computer3", grades.computerScienceGrade3);
+                model.addAttribute("Computer4", grades.computerScienceGrade4);
+                model.addAttribute("Computer5", grades.computerScienceGrade5);
+
+                double ComputerAverage = Functions.CalculateAverage(grades.computerScienceGrade1, grades.computerScienceGrade2, grades.computerScienceGrade3, grades.computerScienceGrade4, grades.computerScienceGrade5);
+                model.addAttribute("ComputerAverage", ComputerAverage);
                 
 
             }
@@ -126,6 +167,50 @@ public class UserProfileController {
             return "redirect:/login";
         }
     }
+
+    @PostMapping("/grades")
+    public String grades(@RequestParam Map<String, String> allParams)
+    {
+        user = userRepository.findByIsActiveTrue();
+        List<User> userList = userRepository.findByLoreAndSchoolClass("Student", allParams.get("group"));
+
+        for (int i = 0; i < userList.size(); i++) 
+        {
+            if(user.getSubject().equals("Mathematics"))
+            {
+                String studentEmail = allParams.get("Email" + (i + 1));
+                Grades studentGrades = gradesRepository.findByStudentEmail(studentEmail);
+
+                String grade1 = allParams.get("Grade1" + (i + 1));
+                String grade2 = allParams.get("Grade2" + (i + 1));
+                String grade3 = allParams.get("Grade3" + (i + 1));
+                String grade4 = allParams.get("Grade4" + (i + 1));
+                String grade5 = allParams.get("Grade5" + (i + 1));
+
+                if (grade1 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade1);}
+                if (grade2 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade2);}
+                if (grade3 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade3);}
+                if (grade4 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade4);}
+                if (grade5 != null){studentGrades.mathematicsGrade1 = Integer.parseInt(grade5);}
+
+
+
+                gradesRepository.save(studentGrades);
+
+
+            }
+            
+        }
+
+        // System.err.println(allParams.get("group"));
+        // List<User> userList = userRepository.findByLoreAndSchoolClass("Student", schoolGroup);
+                
+        // for (int i = 0; i < userList.size(); i++) {
+            
+        // }
+        return "redirect:/grades";
+    }
+
     @GetMapping("/lessons")
     public String lessons(Model model, @RequestParam(value = "day", defaultValue = "Monday") String day)
     {
