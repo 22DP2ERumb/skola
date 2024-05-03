@@ -117,6 +117,37 @@ public class UserProfileController {
                             double average = Functions.CalculateAverage(grades.historyGrade1, grades.historyGrade2, grades.historyGrade3, grades.historyGrade4, grades.historyGrade5);
                             model.addAttribute("Average" + (i + 1), average);
                         }
+
+                        if(user.getSubject().equals("English"))
+                        {
+                            model.addAttribute("Grade1" + (i + 1), grades.englishGrade1);
+                            model.addAttribute("Grade2" + (i + 1), grades.englishGrade2);
+                            model.addAttribute("Grade3" + (i + 1), grades.englishGrade3);
+                            model.addAttribute("Grade4" + (i + 1), grades.englishGrade4);
+                            model.addAttribute("Grade5" + (i + 1), grades.englishGrade5);
+                            double average = Functions.CalculateAverage(grades.englishGrade1, grades.englishGrade2, grades.englishGrade3, grades.englishGrade4, grades.englishGrade5);
+                            model.addAttribute("Average" + (i + 1), average);
+                        }
+                        if(user.getSubject().equals("Sport"))
+                        {
+                            model.addAttribute("Grade1" + (i + 1), grades.sportGrade1);
+                            model.addAttribute("Grade2" + (i + 1), grades.sportGrade2);
+                            model.addAttribute("Grade3" + (i + 1), grades.sportGrade3);
+                            model.addAttribute("Grade4" + (i + 1), grades.sportGrade4);
+                            model.addAttribute("Grade5" + (i + 1), grades.sportGrade5);
+                            double average = Functions.CalculateAverage(grades.sportGrade1, grades.sportGrade2, grades.sportGrade3, grades.sportGrade4, grades.sportGrade5);
+                            model.addAttribute("Average" + (i + 1), average);
+                        }
+                        if(user.getSubject().equals("Computer Science"))
+                        {
+                            model.addAttribute("Grade1" + (i + 1), grades.computerScienceGrade1);
+                            model.addAttribute("Grade2" + (i + 1), grades.computerScienceGrade2);
+                            model.addAttribute("Grade3" + (i + 1), grades.computerScienceGrade3);
+                            model.addAttribute("Grade4" + (i + 1), grades.computerScienceGrade4);
+                            model.addAttribute("Grade5" + (i + 1), grades.computerScienceGrade5);
+                            double average = Functions.CalculateAverage(grades.computerScienceGrade1, grades.computerScienceGrade2, grades.computerScienceGrade3, grades.computerScienceGrade4, grades.computerScienceGrade5);
+                            model.addAttribute("Average" + (i + 1), average);
+                        }
                     }
                 }
                 return "GradeStudent";
@@ -234,15 +265,77 @@ public class UserProfileController {
                 if (grade4 != null && grade4 != ""){studentGrades.scienceGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.scienceGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
             }
+
+            if(user.getSubject().equals("History"))
+            {
+                String studentEmail = allParams.get("Email" + (i + 1));
+                Grades studentGrades = gradesRepository.findByStudentEmail(studentEmail);
+
+                String grade1 = allParams.get("Grade1" + (i + 1));
+                String grade2 = allParams.get("Grade2" + (i + 1));
+                String grade3 = allParams.get("Grade3" + (i + 1));
+                String grade4 = allParams.get("Grade4" + (i + 1));
+                String grade5 = allParams.get("Grade5" + (i + 1));
+
+                if (grade1 != null && grade1 != ""){studentGrades.historyGrade1 = Integer.parseInt(grade1); gradesRepository.save(studentGrades);}
+                if (grade2 != null && grade2 != ""){studentGrades.historyGrade2 = Integer.parseInt(grade2); gradesRepository.save(studentGrades);}
+                if (grade3 != null && grade3 != ""){studentGrades.historyGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
+                if (grade4 != null && grade4 != ""){studentGrades.historyGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
+                if (grade5 != null && grade5 != ""){studentGrades.historyGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+            }
+            if(user.getSubject().equals("English"))
+            {
+                String studentEmail = allParams.get("Email" + (i + 1));
+                Grades studentGrades = gradesRepository.findByStudentEmail(studentEmail);
+
+                String grade1 = allParams.get("Grade1" + (i + 1));
+                String grade2 = allParams.get("Grade2" + (i + 1));
+                String grade3 = allParams.get("Grade3" + (i + 1));
+                String grade4 = allParams.get("Grade4" + (i + 1));
+                String grade5 = allParams.get("Grade5" + (i + 1));
+
+                if (grade1 != null && grade1 != ""){studentGrades.englishGrade1 = Integer.parseInt(grade1); gradesRepository.save(studentGrades);}
+                if (grade2 != null && grade2 != ""){studentGrades.englishGrade2 = Integer.parseInt(grade2); gradesRepository.save(studentGrades);}
+                if (grade3 != null && grade3 != ""){studentGrades.englishGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
+                if (grade4 != null && grade4 != ""){studentGrades.englishGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
+                if (grade5 != null && grade5 != ""){studentGrades.englishGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+            }
+            if(user.getSubject().equals("Sport"))
+            {
+                String studentEmail = allParams.get("Email" + (i + 1));
+                Grades studentGrades = gradesRepository.findByStudentEmail(studentEmail);
+
+                String grade1 = allParams.get("Grade1" + (i + 1));
+                String grade2 = allParams.get("Grade2" + (i + 1));
+                String grade3 = allParams.get("Grade3" + (i + 1));
+                String grade4 = allParams.get("Grade4" + (i + 1));
+                String grade5 = allParams.get("Grade5" + (i + 1));
+
+                if (grade1 != null && grade1 != ""){studentGrades.sportGrade1 = Integer.parseInt(grade1); gradesRepository.save(studentGrades);}
+                if (grade2 != null && grade2 != ""){studentGrades.sportGrade2 = Integer.parseInt(grade2); gradesRepository.save(studentGrades);}
+                if (grade3 != null && grade3 != ""){studentGrades.sportGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
+                if (grade4 != null && grade4 != ""){studentGrades.sportGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
+                if (grade5 != null && grade5 != ""){studentGrades.sportGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+            }
+            if(user.getSubject().equals("ComputerScience"))
+            {
+                String studentEmail = allParams.get("Email" + (i + 1));
+                Grades studentGrades = gradesRepository.findByStudentEmail(studentEmail);
+
+                String grade1 = allParams.get("Grade1" + (i + 1));
+                String grade2 = allParams.get("Grade2" + (i + 1));
+                String grade3 = allParams.get("Grade3" + (i + 1));
+                String grade4 = allParams.get("Grade4" + (i + 1));
+                String grade5 = allParams.get("Grade5" + (i + 1));
+
+                if (grade1 != null && grade1 != ""){studentGrades.computerScienceGrade1 = Integer.parseInt(grade1); gradesRepository.save(studentGrades);}
+                if (grade2 != null && grade2 != ""){studentGrades.computerScienceGrade2 = Integer.parseInt(grade2); gradesRepository.save(studentGrades);}
+                if (grade3 != null && grade3 != ""){studentGrades.computerScienceGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
+                if (grade4 != null && grade4 != ""){studentGrades.computerScienceGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
+                if (grade5 != null && grade5 != ""){studentGrades.computerScienceGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+            }
             
         }
-
-        // System.err.println(allParams.get("group"));
-        // List<User> userList = userRepository.findByLoreAndSchoolClass("Student", schoolGroup);
-                
-        // for (int i = 0; i < userList.size(); i++) {
-            
-        // }
         return "redirect:/grades?Group=" + group;
     }
 

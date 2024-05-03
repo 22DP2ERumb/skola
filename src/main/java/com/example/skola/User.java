@@ -33,7 +33,7 @@ public class User {
         this.emails = emails;
         this.numurs = numurs;
         isActive = false;
-        lore = "Empty";
+        lore = "";
         subject = null;
         this.schoolClass = schoolClass;
     }
@@ -67,5 +67,13 @@ public class User {
     public String getSubject()
     {
         return subject;
+    }
+    public void SetLore(String lore) {
+        this.lore = lore;
+    }
+
+    public void SetSubject(String subject)
+    {
+        this.subject = subject;
     }
 }

@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RegistrationController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private GradesRepository gradesRepository;
     
     @GetMapping(value = "/registration")
     public String Regsitration()
@@ -24,6 +27,7 @@ public class RegistrationController {
         if(check == null && password.matches(repeatPassword))
         {
             User user = new User(password, Fullname, emails, numurs, schoolClass);
+
             userRepository.save(user);
             return "redirect:/login";
         }

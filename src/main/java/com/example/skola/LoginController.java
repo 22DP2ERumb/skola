@@ -14,19 +14,57 @@ public class LoginController {
     private UserRepository userRepository;
     private User user;
 
+    @Autowired
+    private GradesRepository gradesRepository;
+
+    
+
+    private boolean UserSelcetRole;
+
     @GetMapping(value = "/login")
     public String Login() 
     {
         user = userRepository.findByIsActiveTrue();
         if(user != null)
         {
-
             return "redirect:/profile";
         }
         else
         {
             return "Login";
         }
+    }
+    @GetMapping(value = "/role")
+    public String Role()
+    {
+        if (UserSelcetRole)
+        {
+            UserSelcetRole = false;
+            return "Role.html";
+        }
+        else
+        {
+            return "redirect:/";
+        }
+    }
+    @PostMapping(value = "/role")
+    public String RoleSubmit(@RequestParam("role") String role, @RequestParam("subject") String subject)
+    {
+        user.SetLore(role);
+        user.SetSubject(subject);
+        userRepository.save(user);
+
+        user.isActive = true;
+        userRepository.save(user);
+        if(gradesRepository.findByStudentEmail(user.getEmails()) == null && user.getLore().equals("Student"))
+        {
+            Grades grades = new Grades(user.getEmails());
+            gradesRepository.save(grades);
+        }
+
+        
+        return "redirect:/profile";
+
     }
 
     @PostMapping("/login")
@@ -35,9 +73,17 @@ public class LoginController {
 
         if (user != null && user.getPassword().equals(password))
         {
-            user.isActive = true;
-            userRepository.save(user);
-            return "redirect:/profile";
+            if (user.getLore().isEmpty())
+            {
+                UserSelcetRole = true;
+                return "redirect:/role";
+            }
+            else
+            {
+                user.isActive = true; // this user
+                userRepository.save(user);
+                return "redirect:/profile";
+            }
         }
         else
         {

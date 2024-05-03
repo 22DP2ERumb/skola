@@ -25,7 +25,7 @@ public class Lessons {
     String lesson11;
     String lesson12;
 
-    private String schoolClass;
+    String schoolClass;
     String schoolDay;
     
 

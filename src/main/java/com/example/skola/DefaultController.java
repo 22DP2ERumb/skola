@@ -29,8 +29,4 @@ public class DefaultController {
         return "topStudents.html";
     }
 
-    @GetMapping(value = "/Role")
-    public String Role(){
-        return "Role.html";
-    }
 }

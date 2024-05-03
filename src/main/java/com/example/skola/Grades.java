@@ -51,7 +51,48 @@ public class Grades {
     int computerScienceGrade4;
     int computerScienceGrade5;
 
-    public Grades() 
+    public Grades(String studentEmail) {
+
+        this.studentEmail = studentEmail;
+        
+        this.mathematicsGrade1 = -1;
+        this.mathematicsGrade2 = -1;
+        this.mathematicsGrade3 = -1;
+        this.mathematicsGrade4 = -1;
+        this.mathematicsGrade5 = -1;
+    
+        this.scienceGrade1 = -1;
+        this.scienceGrade2 = -1;
+        this.scienceGrade3 = -1;
+        this.scienceGrade4 = -1;
+        this.scienceGrade5 = -1;
+    
+        this.historyGrade1 = -1;
+        this.historyGrade2 = -1;
+        this.historyGrade3 = -1;
+        this.historyGrade4 = -1;
+        this.historyGrade5 = -1;
+    
+        this.englishGrade1 = -1;
+        this.englishGrade2 = -1;
+        this.englishGrade3 = -1;
+        this.englishGrade4 = -1;
+        this.englishGrade5 = -1;
+        
+        this.sportGrade1 = -1;
+        this.sportGrade2 = -1;
+        this.sportGrade3 = -1;
+        this.sportGrade4 = -1;
+        this.sportGrade5 = -1;
+    
+        this.computerScienceGrade1 = -1;
+        this.computerScienceGrade2 = -1;
+        this.computerScienceGrade3 = -1;
+        this.computerScienceGrade4 = -1;
+        this.computerScienceGrade5 = -1;
+    }
+    
+    public Grades()
     {
 
     }
