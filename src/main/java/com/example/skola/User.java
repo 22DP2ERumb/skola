@@ -76,4 +76,14 @@ public class User {
     {
         this.subject = subject;
     }
+
+    public void SetFullName(String fullname)
+    {
+        Fullname = fullname;
+    }
+
+    public void SetNumber(String number)
+    {
+        numurs = number;
+    }
 }

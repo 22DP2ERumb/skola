@@ -22,11 +22,4 @@ public class DefaultController {
     public String Contact() {
         return "ContactUs.html";
     }
-
-    @GetMapping(value = "/topStudents")
-    public String topStudents()
-    {
-        return "topStudents.html";
-    }
-
 }

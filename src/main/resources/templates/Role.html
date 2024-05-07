@@ -10,30 +10,45 @@
     <div class="container">
         <h1>CHOOSE YOUR ROLE</h1>
         <form action="/role" method="post" id="roleForm">
-            <button class="button" type="submit" name="role" value="Student">Student</button>
-            <button id="teacherButton" class="button" type="button" name="role" value="Teacher">Teacher</button>
-            <button class="button" type="submit" name="role" value="EducationalDepartment">Educational department</button>
-            
+
+
+            <button id = "studentButton"class="button" type="submit">Student</button>
+            <button id="teacherButton" class="button" type="button">Teacher</button>
+            <button id = "MacibuDalaButton" class="button" type="submit" >Educational department</button>
+            <input type="hidden" name="role" id="selectedRole">
+
             <div id="teacherOptions" style="display: none;">
                 <h2>Select Subject:</h2>
-                <button name="subject" class="subjectButton" type="submit" value="Mathematics">Mathematics</button>
-                <button name="subject" class="subjectButton" type="submit" value="Science">Science</button>
-                <button name="subject" class="subjectButton" type="submit" value="History">History</button>
-                <button name="subject" class="subjectButton" type="submit" value="English">English</button>
-                <button name="subject" class="subjectButton" type="submit" value="Sport">Sport</button>
-                <button name="subject" class="subjectButton" type="submit" value="ComputerScience">Computer Science</button>
-                <input type="hidden" name="role" id="selectedRole">
+                <button class="subjectButton" type="submit" name="subject" value="Mathematics">Mathematics</button>
+                <button class="subjectButton" type="submit" name="subject" value="Science">Science</button>
+                <button class="subjectButton" type="submit" name="subject" value="History">History</button>
+                <button class="subjectButton" type="submit" name="subject" value="English">English</button>
+                <button class="subjectButton" type="submit" name="subject" value="Sport">Sport</button>
+                <button class="subjectButton" type="submit" name="subject" value="ComputerScience">Computer Science</button>
             </div>
         </form>
     </div>
 
-<script>
-        document.getElementById("teacherButton").addEventListener("click", function() 
-        {
-        document.getElementById("teacherOptions").style.display = "block";
-        document.getElementById("selectedRole").value = "Teacher";
+    <script>
+        //Teacher
+        document.getElementById("teacherButton").addEventListener("click", function() {
+            document.getElementById("teacherOptions").style.display = "block";
+            document.getElementById("selectedRole").value = "Teacher";
         });
-</script>
+        //Student
+        document.getElementById("studentButton").addEventListener("click", function() {
+            document.getElementById("selectedRole").value = "Student";
+            document.getElementById("roleForm").submit();
+        });
+        //MacibuDala
+        document.getElementById("MacibuDalaButton").addEventListener("click", function() {
+            document.getElementById("selectedRole").value = "MacibuDala";
+            document.getElementById("roleForm").submit();
+        });
+
+    </script>
+    
+    
 
 </body>
 </html>

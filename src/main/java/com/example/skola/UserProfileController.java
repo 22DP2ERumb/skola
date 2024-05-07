@@ -9,8 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import lombok.ToString;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserProfileController {
@@ -44,6 +43,43 @@ public class UserProfileController {
             return "redirect:/login";
         }
     }
+
+    @PostMapping(value = "/ChangeName")
+    public String EditName(@RequestParam("newName") String newName, RedirectAttributes redirectAttributes)
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (newName.matches("^[a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ]+\\s[a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ]+$")) 
+        {
+            user.SetFullName(newName);
+            userRepository.save(user);
+            redirectAttributes.addFlashAttribute("Success", "Name Changed");
+        }
+        else
+        {
+            redirectAttributes.addFlashAttribute("error", "Invalid full name");;
+        }
+
+        return "redirect:/profile";
+    }
+
+    @PostMapping(value = "/ChangeNumber")
+    public String EditNumber(@RequestParam("newNumber") String newNumber, RedirectAttributes redirectAttributes)
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (newNumber.matches("^2[0-9]{7}$")) 
+        {
+            user.SetNumber(newNumber);
+            userRepository.save(user);
+            redirectAttributes.addFlashAttribute("SuccessNumber", "Number changed");
+        }
+        else
+        {
+            redirectAttributes.addFlashAttribute("errorNumber", "Invalid number");;
+        }
+
+        return "redirect:/profile";
+    }
+
     @GetMapping("/logout")
     public String logout() 
     {
@@ -264,6 +300,9 @@ public class UserProfileController {
                 if (grade3 != null && grade3 != ""){studentGrades.scienceGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
                 if (grade4 != null && grade4 != ""){studentGrades.scienceGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.scienceGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+                double scienceaverage = Functions.CalculateAverage(studentGrades.scienceGrade1, studentGrades.scienceGrade2, studentGrades.scienceGrade3, studentGrades.scienceGrade4, studentGrades.scienceGrade5);
+                studentGrades.scienceAverage = scienceaverage;
+                gradesRepository.save(studentGrades);
             }
 
             if(user.getSubject().equals("History"))
@@ -282,6 +321,10 @@ public class UserProfileController {
                 if (grade3 != null && grade3 != ""){studentGrades.historyGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
                 if (grade4 != null && grade4 != ""){studentGrades.historyGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.historyGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+
+                double historyAverage = Functions.CalculateAverage(studentGrades.historyGrade1, studentGrades.historyGrade2, studentGrades.historyGrade3, studentGrades.historyGrade4, studentGrades.historyGrade5);
+                studentGrades.historyAverage = historyAverage;
+                gradesRepository.save(studentGrades);
             }
             if(user.getSubject().equals("English"))
             {
@@ -337,6 +380,211 @@ public class UserProfileController {
             
         }
         return "redirect:/grades?Group=" + group;
+    }
+    @GetMapping("/editgrades")
+    public String editgrades(@RequestParam String group, @RequestParam("GradeEmail") String GradeEmail, @RequestParam("GradeNumber") String GradeNumber)
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (user != null && user.getLore().equals("Teacher"))
+        {
+            if (user.getSubject().equals("Mathematics"))
+            {
+                Grades studentsGrades = gradesRepository.findByStudentEmail(GradeEmail);
+                int Grade = Integer.parseInt(GradeNumber);
+                switch(Grade)
+                {
+                    case 1:
+                    studentsGrades.mathematicsGrade1 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 2:
+                    studentsGrades.mathematicsGrade2 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 3:
+                    studentsGrades.mathematicsGrade3 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 4:
+                    studentsGrades.mathematicsGrade4 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 5:
+                    studentsGrades.mathematicsGrade5 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+                }
+            }
+
+            if (user.getSubject().equals("Science"))
+            {
+                Grades studentsGrades = gradesRepository.findByStudentEmail(GradeEmail);
+                int Grade = Integer.parseInt(GradeNumber);
+                switch(Grade)
+                {
+                    case 1:
+                    studentsGrades.scienceGrade1 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 2:
+                    studentsGrades.scienceGrade2 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 3:
+                    studentsGrades.scienceGrade3 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 4:
+                    studentsGrades.scienceGrade4 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 5:
+                    studentsGrades.scienceGrade5 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+                }
+            }
+
+            if (user.getSubject().equals("History"))
+            {
+                Grades studentsGrades = gradesRepository.findByStudentEmail(GradeEmail);
+                int Grade = Integer.parseInt(GradeNumber);
+                switch(Grade)
+                {
+                    case 1:
+                    studentsGrades.historyGrade1 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 2:
+                    studentsGrades.historyGrade2 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 3:
+                    studentsGrades.historyGrade3 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 4:
+                    studentsGrades.historyGrade4 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 5:
+                    studentsGrades.historyGrade5 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+                }
+            }
+
+            if (user.getSubject().equals("English"))
+            {
+                Grades studentsGrades = gradesRepository.findByStudentEmail(GradeEmail);
+                int Grade = Integer.parseInt(GradeNumber);
+                switch(Grade)
+                {
+                    case 1:
+                    studentsGrades.englishGrade1 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 2:
+                    studentsGrades.englishGrade2 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 3:
+                    studentsGrades.englishGrade3 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 4:
+                    studentsGrades.englishGrade4 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 5:
+                    studentsGrades.englishGrade5 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+                }
+            }
+            if (user.getSubject().equals("Sport"))
+            {
+                Grades studentsGrades = gradesRepository.findByStudentEmail(GradeEmail);
+                int Grade = Integer.parseInt(GradeNumber);
+                switch(Grade)
+                {
+                    case 1:
+                    studentsGrades.sportGrade1 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 2:
+                    studentsGrades.sportGrade2 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 3:
+                    studentsGrades.sportGrade3 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 4:
+                    studentsGrades.sportGrade4 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 5:
+                    studentsGrades.sportGrade5 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+                }
+            }
+            if (user.getSubject().equals("ComputerScience"))
+            {
+                Grades studentsGrades = gradesRepository.findByStudentEmail(GradeEmail);
+                int Grade = Integer.parseInt(GradeNumber);
+                switch(Grade)
+                {
+                    case 1:
+                    studentsGrades.computerScienceGrade1 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 2:
+                    studentsGrades.computerScienceGrade2 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 3:
+                    studentsGrades.computerScienceGrade3 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 4:
+                    studentsGrades.computerScienceGrade4 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+
+                    case 5:
+                    studentsGrades.computerScienceGrade5 = -1;
+                    gradesRepository.save(studentsGrades);
+                    break;
+                }
+            }
+            return "redirect:/grades?Group=" + group;
+        }
+        return "redirect:/login";
     }
 
     @GetMapping("/lessons")

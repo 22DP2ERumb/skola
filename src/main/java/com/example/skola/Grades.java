@@ -21,11 +21,15 @@ public class Grades {
     int mathematicsGrade4;
     int mathematicsGrade5;
 
+    double mathematicsGradeAverage;
+
     int scienceGrade1;
     int scienceGrade2;
     int scienceGrade3;
     int scienceGrade4;
     int scienceGrade5;
+
+    double scienceAverage;
 
     int historyGrade1;
     int historyGrade2;
@@ -33,11 +37,15 @@ public class Grades {
     int historyGrade4;
     int historyGrade5;
 
+    double historyAverage;
+
     int englishGrade1;
     int englishGrade2;
     int englishGrade3;
     int englishGrade4;
     int englishGrade5;
+
+    double englishAverage;
     
     int sportGrade1;
     int sportGrade2;
@@ -45,11 +53,15 @@ public class Grades {
     int sportGrade4;
     int sportGrade5;
 
+    double sportAverage;
+
     int computerScienceGrade1;
     int computerScienceGrade2;
     int computerScienceGrade3;
     int computerScienceGrade4;
     int computerScienceGrade5;
+
+    double computerScienceAverage;
 
     public Grades(String studentEmail) {
 
@@ -90,6 +102,13 @@ public class Grades {
         this.computerScienceGrade3 = -1;
         this.computerScienceGrade4 = -1;
         this.computerScienceGrade5 = -1;
+
+        this.mathematicsGradeAverage = 0;
+        this.scienceAverage = 0;
+        this.historyAverage = 0;
+        this.englishAverage = 0;
+        this.sportAverage = 0;
+        this.computerScienceAverage = 0;
     }
     
     public Grades()

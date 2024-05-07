@@ -212,5 +212,15 @@ th {
     text-align: right;
 }
 
+#editbutton {
+    color: red;
+    background: transparent;
+    position: absolute;
+    font-size: 20px;
+    transform: translate(-60%, 70%);
+    transition: background-color 0.3s ease;
+}
 
-
+#editbutton:hover {
+    background-color: rgb(94, 103, 131);
+}

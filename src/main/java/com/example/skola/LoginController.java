@@ -48,14 +48,15 @@ public class LoginController {
         }
     }
     @PostMapping(value = "/role")
-    public String RoleSubmit(@RequestParam("role") String role, @RequestParam("subject") String subject)
+    public String RoleSubmit(@RequestParam("role") String role, @RequestParam(value = "subject", defaultValue = "") String subject)
     {
         user.SetLore(role);
         user.SetSubject(subject);
-        userRepository.save(user);
 
+        userRepository.save(user);
         user.isActive = true;
         userRepository.save(user);
+        
         if(gradesRepository.findByStudentEmail(user.getEmails()) == null && user.getLore().equals("Student"))
         {
             Grades grades = new Grades(user.getEmails());
