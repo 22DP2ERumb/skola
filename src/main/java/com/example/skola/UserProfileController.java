@@ -342,6 +342,10 @@ public class UserProfileController {
                 if (grade3 != null && grade3 != ""){studentGrades.englishGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
                 if (grade4 != null && grade4 != ""){studentGrades.englishGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.englishGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+
+                double englishAverage = Functions.CalculateAverage(studentGrades.englishGrade1, studentGrades.englishGrade2, studentGrades.englishGrade3, studentGrades.englishGrade4, studentGrades.englishGrade5);
+                studentGrades.englishAverage = englishAverage;
+                gradesRepository.save(studentGrades);
             }
             if(user.getSubject().equals("Sport"))
             {
@@ -359,6 +363,10 @@ public class UserProfileController {
                 if (grade3 != null && grade3 != ""){studentGrades.sportGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
                 if (grade4 != null && grade4 != ""){studentGrades.sportGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.sportGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+
+                double sportAverage = Functions.CalculateAverage(studentGrades.sportGrade1, studentGrades.sportGrade2, studentGrades.sportGrade3, studentGrades.sportGrade4, studentGrades.sportGrade5);
+                studentGrades.sportAverage = sportAverage;
+                gradesRepository.save(studentGrades);
             }
             if(user.getSubject().equals("ComputerScience"))
             {
@@ -376,6 +384,10 @@ public class UserProfileController {
                 if (grade3 != null && grade3 != ""){studentGrades.computerScienceGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
                 if (grade4 != null && grade4 != ""){studentGrades.computerScienceGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.computerScienceGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+
+                double computerScienceAverage = Functions.CalculateAverage(studentGrades.computerScienceGrade1, studentGrades.computerScienceGrade2, studentGrades.computerScienceGrade3, studentGrades.computerScienceGrade4, studentGrades.computerScienceGrade5);
+                studentGrades.computerScienceAverage = computerScienceAverage;
+                gradesRepository.save(studentGrades);
             }
             
         }
