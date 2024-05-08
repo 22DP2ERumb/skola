@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/contactus.css">
-    <title>Document</title>
+    <title>MācībuVide</title>
 </head>
 <body> 
     <style>
@@ -18,14 +18,14 @@
 </body>
 <body>
     <div class="container">
-        <form>
+        <form action="/ContactMail" method="post">
             <h1>Contact Us Form</h1>
-            <input type="text" id="firstName" placeholder="First Name" required>
-            <input type="text" id="lastName" placeholder="Last Name" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="mobile" placeholder="Mobile" required>
+            <input name="name" type="text" id="firstName" placeholder="First Name" required>
+            
+            <input name="email" type="email" id="email" placeholder="Email" required>
+            <input name="number" type="text" id="mobile" placeholder="Mobile" required>
             <h4>Type Your Message Here...</h4>
-            <textarea required></textarea>
+            <textarea name="text" required></textarea>
             <input type="submit" value="Send" id="button">
         </form>
     </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/UserProfile.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>User Profile</title>
+    <title>MācībuVide</title>
 </head>
 <body>
     <div class="container">
@@ -14,11 +14,17 @@
                 <a href="/logout" a>Logout</a>
                 <a href="/support">Support</a>
                 <a href="/lessons">Lessons</a>
-                <a href="/grades">Grades</a>
+                <span th:if="${role != 'MacibuDala'}">
+                    <a href="/grades">Grades</a>
+                </span>
                 <a href="/profile" class="active">Profile</a>
 
                 <span th:if="${role == 'MacibuDala'}">
                     <a href="/lessonManager">Lesson Manager</a>
+                </span>
+
+                <span th:if="${role == 'MacibuDala'}">
+                    <a href="/deleteUser">Delete User</a>
                 </span>
 
             </form>
@@ -52,13 +58,15 @@
 
                                 <div id = "NameWindow" style="display: none;">
                                     <form action="/ChangeName" method="post">
-                                        <input type="text" name = "newName">
+                                        <input placeholder="New full name" type="text" name = "newName">
                                         <button id = "ChangeName" type="submit" class='bx bxs-check-square'></button>
                                     </form>
                                 </div>
 
 
                             </div>
+
+                            
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
@@ -76,12 +84,39 @@
 
                                 <div id = "NumberWindow" style="display: none;">
                                     <form action="/ChangeNumber" method="post">
-                                        <input type="number" name = "newNumber">
+                                        <input placeholder="New number" type="number" name = "newNumber">
                                         <button id = "ChangeName" type="submit" class='bx bxs-check-square'></button>
                                     </form>
                                 </div>
+                                
 
                             <hr>
+                            <!-- Password spot -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Password:</h5>
+                                    <br>
+                                </div>
+                                <div id = "CurrentPasswordWindow" class="col-md-9 text-secondary" >
+                                    <a> *********</a>
+                                    <button id = "ChangePassword"><i class='bx bxs-pencil'></i></button><br> 
+                                    <p style="color: red;" th:if="${paserror}" th:text="${paserror}"></p>
+                                    <p style="color: green;" th:if="${passuccess}" th:text="${passuccess}"></p>
+                                </div>
+
+
+                                <div id = "PasswordWindow" style="display: none;">
+                                    <form action="/ChangePassword" method="post">
+                                        <input placeholder="New password" type="password" name = "newPassword">
+                                        <input placeholder="New password repeat" type="password" name = "newPasswordRepeat">
+                                        <button id = "ChangePassword" type="submit" class='bx bxs-check-square'></button>
+                                    </form>
+                                </div>
+
+
+                            </div>
+                            <hr>
+                            
                             <div class="row">
                                 <div class="col-md-3">
                                     <h5>Email</h5>
@@ -90,6 +125,7 @@
                                     <p class="email"><p th:text="${Email}"></p></p>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -107,6 +143,12 @@
         {
             document.getElementById("NumberWindow").style.display = "block";
             document.getElementById("CurrentNumberWindow").style.display = "none";
+        });
+
+        document.getElementById("ChangePassword").addEventListener("click", function() 
+        {
+            document.getElementById("PasswordWindow").style.display = "block";
+            document.getElementById("CurrentPasswordWindow").style.display = "none";
         });
 </script>
 </body>

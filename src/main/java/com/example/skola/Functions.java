@@ -1,7 +1,9 @@
 package com.example.skola;
 import java.lang.Math;
 
+
 public class Functions {
+
     public static double CalculateAverage(int grade1, int grade2, int grade3, int grade4, int grade5)
     {
         int counter = 0;

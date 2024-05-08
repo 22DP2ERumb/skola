@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson List</title>
+<title>MācībuVide</title>
 <link rel="stylesheet" href="css/Lessons.css">
 </head>
 <body>
@@ -13,10 +13,15 @@
             <a href="/logout">Logout</a>
             <a href="/support">Support</a>
             <a href="/lessons" class="active">Lessons</a>
-            <a href="/grades">Grades</a>
+            <span th:if="${role != 'MacibuDala'}">
+                <a href="/grades">Grades</a>
+            </span>
             <a href="/profile">Profile</a>
             <span th:if="${role == 'MacibuDala'}">
                 <a href="/lessonManager">Lesson Manager</a>
+            </span>
+            <span th:if="${role == 'MacibuDala'}">
+                <a href="/deleteUser">Delete User</a>
             </span>
         </form>
         <div class="table-container">

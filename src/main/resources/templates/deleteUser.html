@@ -22,22 +22,17 @@
                 <a href="/lessonManager">Lesson Manager</a>
             </span>
             <span th:if="${role == 'MacibuDala'}">
-                <a href="/deleteUser">Delete User</a>
+                <a href="/deleteUser" class="active">Delete User</a>
             </span>
 
         </form>
         <div class="table-container">
-            <!-- Support Form -->
-            <div class="support-form">
-                <h1>Support Form</h1>
-                <form action="/sendMail" method="post">
-                    <input name = "name" type="text" id="name" placeholder="Your Name" required>
-                    <input name = "email" type="email" id="email" placeholder="Your Email" required>
-                    <textarea name = "message" id="message" placeholder="Your Message" required></textarea>
-                    <input type="submit" value="Submit">
-                    <p style="color: green;" th:if="${success}" th:text="${success}"></p>
-                </form>
-            </div>
+            <form action="/deleteUser" method="post" class="delete-form">
+                <input type="email" name="userEmail" placeholder="Enter user's email" required>
+                <button type="submit">Delete User</button>
+                <p style="color: green;" th:if="${success}" th:text="${success}"></p>
+                <p style="color: red;" th:if="${error}" th:text="${error}"></p>
+            </form>
         </div>
     </div>
 </div>

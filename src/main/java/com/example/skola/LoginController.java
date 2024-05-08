@@ -17,6 +17,9 @@ public class LoginController {
     @Autowired
     private GradesRepository gradesRepository;
 
+    @Autowired
+    SupportService supportService;
+
     
 
     private boolean UserSelcetRole;
@@ -97,5 +100,23 @@ public class LoginController {
     public String forgotpassword()
     {
         return "forgotpassword";
+    }
+
+    @PostMapping("/forgotPassword")
+    public String forgotPassword(@RequestParam("email") String email, RedirectAttributes redirectAttributes)
+    {
+        User user = userRepository.findByEmails(email);
+        if (user != null)
+        {
+            supportService.forgotPasswordMail(email, user.getPassword());
+            return "redirect:/login";
+        }
+        else
+        {
+            redirectAttributes.addFlashAttribute("error", "Email dosnet exist.");
+            return "redirect:/forgotpassword";
+        }
+
+        
     }
 }

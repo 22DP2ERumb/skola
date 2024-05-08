@@ -81,7 +81,15 @@ th {
     flex-direction: column;
 }
 
-.support-form input[type="text"],
+.support-form #name
+{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 15%;
+}
 .support-form input[type="email"],
 .support-form textarea {
     margin-bottom: 15px;
@@ -90,6 +98,30 @@ th {
     border-radius: 3px;
     font-size: 16px;
 }
+.delete-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-form input[type="email"],
+.delete-form button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.delete-form button {
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-form button:hover {
+    background-color: #007a74;
+}
+
 
 .support-form input[type="submit"] {
     background-color: teal;

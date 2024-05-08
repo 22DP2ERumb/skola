@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson List</title>
+    <title>MācībuVide</title>
     <link rel="stylesheet" href="css/support.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -15,10 +15,15 @@
             <a href="/logout">Logout</a>
             <a href="/support">Support</a>
             <a href="/lessons">Lessons</a>
-            <a href="/grades" class ="active">Grades</a>
+            <span th:if="${role != 'MacibuDala'}">
+                <a href="/grades" class="active">Grades</a>
+            </span>
             <a href="/profile">Profile</a>
             <span th:if="${role == 'MacibuDala'}">
                 <a href="/lessonManager">Lesson Manager</a>
+            </span>
+            <span th:if="${role == 'MacibuDala'}">
+                <a href="/deleteUser">Delete User</a>
             </span>
         
         </form>
@@ -65,7 +70,7 @@
 
                                     <td th:if="${Grade11 != -1}">
                                         <span th:text="${Grade11}"></span>
-                                        <a id="editbutton1" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email1 != null}" id="editbutton1" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
                                     <!-- Example END -->
                                     
@@ -73,25 +78,25 @@
                                     
                                     <td th:if="${Grade21 != -1}">
                                         <span th:text="${Grade21}"></span>
-                                        <a id="editbutton2" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email1 != null}" id="editbutton2" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade31 == -1}"><input type="number" min="0" max="10" id ="Grade31" name = "Grade31"></td>
                                     <td th:if="${Grade31 != -1}">
                                         <span th:text="${Grade31}"></span>
-                                        <a id="editbutton3" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email1 != null}" id="editbutton3" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade41 == -1}"><input type="number" min="0" max="10" id ="Grade41" name = "Grade41"></td>
                                     <td th:if="${Grade41 != -1}">
                                         <span th:text="${Grade41}"></span>
-                                        <a id="editbutton4" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email1 != null}" id="editbutton4" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade51 == -1}"><input type="number" min="0" max="10" id ="Grade51" name = "Grade51"></td>
                                     <td th:if="${Grade51 != -1}">
                                         <span th:text="${Grade51}"></span>
-                                        <a id="editbutton5" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email1 != null}" id="editbutton5" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email1}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
 
                                     <th th:text="${Average1}"></th>
@@ -106,31 +111,31 @@
                                     <td th:if="${Grade12 == -1}"><input type="number" min="0" max="10" id ="Grade12" name = "Grade12"></td>
                                     <td th:if="${Grade12 != -1}">
                                         <span th:text="${Grade12}"></span>
-                                        <a id="editbutton6" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email2 != null}" id="editbutton6" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
                                     
                                     <td th:if="${Grade22 == -1}"><input type="number" min="0" max="10" id ="Grade22" name = "Grade22"></td>
                                     <td th:if="${Grade22 != -1}">
                                         <span th:text="${Grade22}"></span>
-                                        <a id="editbutton7" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email2 != null}" id="editbutton7" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade32 == -1}"><input type="number" min="0" max="10" id ="Grade32" name = "Grade32"></td>
                                     <td th:if="${Grade32 != -1}">
                                         <span th:text="${Grade32}"></span>
-                                        <a id="editbutton8" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email2 != null}" id="editbutton8" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade42 == -1}"><input type="number" min="0" max="10" id ="Grade42" name = "Grade42"></td>
                                     <td th:if="${Grade42 != -1}">
                                         <span th:text="${Grade42}"></span>
-                                        <a id="editbutton9" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email2 != null}" id="editbutton9" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade52 == -1}"><input type="number" min="0" max="10" id ="Grade52" name = "Grade52"></td>
                                     <td th:if="${Grade52 != -1}">
                                         <span th:text="${Grade52}"></span>
-                                        <a id="editbutton10" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email2 != null}" id="editbutton10" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email2}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
 
                                     <th th:text="${Average2}"></th>
@@ -145,31 +150,31 @@
                                     <td th:if="${Grade13 == -1}"><input type="number" min="0" max="10" id="Grade13" name="Grade13"></td>
                                     <td th:if="${Grade13 != -1}">
                                         <span th:text="${Grade13}"></span>
-                                        <a id="editbutton11" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email3 != null}" id="editbutton11" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade23 == -1}"><input type="number" min="0" max="10" id="Grade23" name="Grade23"></td>
                                     <td th:if="${Grade23 != -1}">
                                         <span th:text="${Grade23}"></span>
-                                        <a id="editbutton12" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email3 != null}" id="editbutton12" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade33 == -1}"><input type="number" min="0" max="10" id="Grade33" name="Grade33"></td>
                                     <td th:if="${Grade33 != -1}">
                                         <span th:text="${Grade33}"></span>
-                                        <a id="editbutton13" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email3 != null}" id="editbutton13" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade43 == -1}"><input type="number" min="0" max="10" id="Grade43" name="Grade43"></td>
                                     <td th:if="${Grade43 != -1}">
                                         <span th:text="${Grade43}"></span>
-                                        <a id="editbutton14" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email3 != null}" id="editbutton14" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade53 == -1}"><input type="number" min="0" max="10" id="Grade53" name="Grade53"></td>
                                     <td th:if="${Grade53 != -1}">
                                         <span th:text="${Grade53}"></span>
-                                        <a id="editbutton15" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email3 != null}" id="editbutton15" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email3}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average3}"></th>
                                 </tr>
@@ -183,31 +188,31 @@
                                     <td th:if="${Grade14 == -1}"><input type="number" min="0" max="10" id="Grade14" name="Grade14"></td>
                                     <td th:if="${Grade14 != -1}">
                                         <span th:text="${Grade14}"></span>
-                                        <a id="editbutton16" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email4 != null}" id="editbutton16" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade24 == -1}"><input type="number" min="0" max="10" id="Grade24" name="Grade24"></td>
                                     <td th:if="${Grade24 != -1}">
                                         <span th:text="${Grade24}"></span>
-                                        <a id="editbutton17" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email4 != null}" id="editbutton17" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade34 == -1}"><input type="number" min="0" max="10" id="Grade34" name="Grade34"></td>
                                     <td th:if="${Grade34 != -1}">
                                         <span th:text="${Grade34}"></span>
-                                        <a id="editbutton18" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email4 != null}" id="editbutton18" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade44 == -1}"><input type="number" min="0" max="10" id="Grade44" name="Grade44"></td>
                                     <td th:if="${Grade44 != -1}">
                                         <span th:text="${Grade44}"></span>
-                                        <a id="editbutton19" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email4 != null}" id="editbutton19" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade54 == -1}"><input type="number" min="0" max="10" id="Grade54" name="Grade54"></td>
                                     <td th:if="${Grade54 != -1}">
                                         <span th:text="${Grade54}"></span>
-                                        <a id="editbutton20" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email4 != null}" id="editbutton20" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email4}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average4}"></th>
                                 </tr>
@@ -221,31 +226,31 @@
                                     <td th:if="${Grade15 == -1}"><input type="number" min="0" max="10" id="Grade15" name="Grade15"></td>
                                     <td th:if="${Grade15 != -1}">
                                         <span th:text="${Grade15}"></span>
-                                        <a id="editbutton21" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email5 != null}" id="editbutton21" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade25 == -1}"><input type="number" min="0" max="10" id="Grade25" name="Grade25"></td>
                                     <td th:if="${Grade25 != -1}">
                                         <span th:text="${Grade25}"></span>
-                                        <a id="editbutton22" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email5 != null}" id="editbutton22" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade35 == -1}"><input type="number" min="0" max="10" id="Grade35" name="Grade35"></td>
                                     <td th:if="${Grade35 != -1}">
                                         <span th:text="${Grade35}"></span>
-                                        <a id="editbutton23" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email5 != null}" id="editbutton23" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade45 == -1}"><input type="number" min="0" max="10" id="Grade45" name="Grade45"></td>
                                     <td th:if="${Grade45 != -1}">
                                         <span th:text="${Grade45}"></span>
-                                        <a id="editbutton24" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email5 != null}" id="editbutton24" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade55 == -1}"><input type="number" min="0" max="10" id="Grade55" name="Grade55"></td>
                                     <td th:if="${Grade55 != -1}">
                                         <span th:text="${Grade55}"></span>
-                                        <a id="editbutton25" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email5 != null}" id="editbutton25" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email5}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average5}"></th>
                                 </tr>
@@ -259,31 +264,31 @@
                                     <td th:if="${Grade16 == -1}"><input type="number" min="0" max="10" id="Grade16" name="Grade16"></td>
                                     <td th:if="${Grade16 != -1}">
                                         <span th:text="${Grade16}"></span>
-                                        <a id="editbutton26" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email6 != null}" id="editbutton26" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade26 == -1}"><input type="number" min="0" max="10" id="Grade26" name="Grade26"></td>
                                     <td th:if="${Grade26 != -1}">
                                         <span th:text="${Grade16}"></span>
-                                        <a id="editbutton27" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email6 != null}" id="editbutton27" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade36 == -1}"><input type="number" min="0" max="10" id="Grade36" name="Grade36"></td>
                                     <td th:if="${Grade36 != -1}">
                                         <span th:text="${Grade36}"></span>
-                                        <a id="editbutton28" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email6 != null}" id="editbutton28" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade46 == -1}"><input type="number" min="0" max="10" id="Grade46" name="Grade46"></td>
                                     <td th:if="${Grade46 != -1}">
                                         <span th:text="${Grade46}"></span>
-                                        <a id="editbutton29" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email6 != null}" id="editbutton29" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade56 == -1}"><input type="number" min="0" max="10" id="Grade56" name="Grade56"></td>
                                     <td th:if="${Grade56 != -1}">
                                         <span th:text="${Grade56}"></span>
-                                        <a id="editbutton30" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email6 != null}" id="editbutton30" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email6}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average6}"></th>
                                 </tr>
@@ -297,30 +302,30 @@
                                     <td th:if="${Grade17 == -1}"><input type="number" min="0" max="10" id="Grade17" name="Grade17"></td>
                                     <td th:if="${Grade17 != -1}">
                                         <span th:text="${Grade17}"></span>
-                                        <a id="editbutton31" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email7 != null}" id="editbutton31" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade27 == -1}"><input type="number" min="0" max="10" id="Grade27" name="Grade27"></td>
                                     <td th:if="${Grade27 != -1}">
                                         <span th:text="${Grade27}"></span>
-                                        <a id="editbutton32" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email7 != null}" id="editbutton32" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
                                     <td th:if="${Grade37 == -1}"><input type="number" min="0" max="10" id="Grade37" name="Grade37"></td>
                                     <td th:if="${Grade37 != -1}">
                                         <span th:text="${Grade37}"></span>
-                                        <a id="editbutton33" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email7 != null}" id="editbutton33" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade47 == -1}"><input type="number" min="0" max="10" id="Grade47" name="Grade47"></td>
                                     <td th:if="${Grade47 != -1}">
                                         <span th:text="${Grade47}"></span>
-                                        <a id="editbutton34" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email7 != null}" id="editbutton34" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade57 == -1}"><input type="number" min="0" max="10" id="Grade57" name="Grade57"></td>
                                     <td th:if="${Grade57 != -1}">
                                         <span th:text="${Grade57}"></span>
-                                        <a id="editbutton35" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email7 != null}" id="editbutton35" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email7}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average7}"></th>
                                 </tr>
@@ -334,31 +339,31 @@
                                     <td th:if="${Grade18 == -1}"><input type="number" min="0" max="10" id="Grade18" name="Grade18"></td>
                                     <td th:if="${Grade18 != -1}">
                                         <span th:text="${Grade18}"></span>
-                                        <a id="editbutton36" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email8 != null}" id="editbutton36" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade28 == -1}"><input type="number" min="0" max="10" id="Grade28" name="Grade28"></td>
                                     <td th:if="${Grade28 != -1}">
                                         <span th:text="${Grade28}"></span>
-                                        <a id="editbutton37" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email8 != null}" id="editbutton37" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade38 == -1}"><input type="number" min="0" max="10" id="Grade38" name="Grade38"></td>
                                     <td th:if="${Grade38 != -1}">
                                         <span th:text="${Grade38}"></span>
-                                        <a id="editbutton38" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email8 != null}" id="editbutton38" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade48 == -1}"><input type="number" min="0" max="10" id="Grade48" name="Grade48"></td>
                                     <td th:if="${Grade48 != -1}">
                                         <span th:text="${Grade48}"></span>
-                                        <a id="editbutton39" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email8 != null}" id="editbutton39" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade58 == -1}"><input type="number" min="0" max="10" id="Grade58" name="Grade58"></td>
                                     <td th:if="${Grade58 != -1}">
                                         <span th:text="${Grade58}"></span>
-                                        <a id="editbutton40" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email8 != null}" id="editbutton40" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email8}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average8}"></th>
                                 </tr>
@@ -372,31 +377,31 @@
                                     <td th:if="${Grade19 == -1}"><input type="number" min="0" max="10" id="Grade19" name="Grade19"></td>
                                     <td th:if="${Grade19 != -1}">
                                         <span th:text="${Grade19}"></span>
-                                        <a id="editbutton41" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email9 != null}" id="editbutton41" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade29 == -1}"><input type="number" min="0" max="10" id="Grade29" name="Grade29"></td>
                                     <td th:if="${Grade29 != -1}">
                                         <span th:text="${Grade29}"></span>
-                                        <a id="editbutton42" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email9 != null}" id="editbutton42" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade39 == -1}"><input type="number" min="0" max="10" id="Grade39" name="Grade39"></td>
                                     <td th:if="${Grade39 != -1}">
                                         <span th:text="${Grade39}"></span>
-                                        <a id="editbutton43" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email9 != null}" id="editbutton43" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade49 == -1}"><input type="number" min="0" max="10" id="Grade49" name="Grade49"></td>
                                     <td th:if="${Grade49 != -1}">
                                         <span th:text="${Grade49}"></span>
-                                        <a id="editbutton44" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email9 != null}" id="editbutton44" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade59 == -1}"><input type="number" min="0" max="10" id="Grade59" name="Grade59"></td>
                                     <td th:if="${Grade59 != -1}">
                                         <span th:text="${Grade59}"></span>
-                                        <a id="editbutton45" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email9 != null}" id="editbutton45" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email9}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average9}"></th>
                                 </tr>
@@ -410,31 +415,31 @@
                                     <td th:if="${Grade110 == -1}"><input type="number" min="0" max="10" id="Grade110" name="Grade110"></td>
                                     <td th:if="${Grade110 != -1}">
                                         <span th:text="${Grade110}"></span>
-                                        <a id="editbutton46" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 1, group=${group})}"></a> 
+                                        <a th:if="${Email10 != null}" id="editbutton46" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 1, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade210 == -1}"><input type="number" min="0" max="10" id="Grade210" name="Grade210"></td>
                                     <td th:if="${Grade210 != -1}">
                                         <span th:text="${Grade210}"></span>
-                                        <a id="editbutton47" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 2, group=${group})}"></a> 
+                                        <a th:if="${Email10 != null}" id="editbutton47" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 2, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade310 == -1}"><input type="number" min="0" max="10" id="Grade310" name="Grade310"></td>
                                     <td th:if="${Grade310 != -1}">
                                         <span th:text="${Grade310}"></span>
-                                        <a id="editbutton48" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 3, group=${group})}"></a> 
+                                        <a th:if="${Email10 != null}" id="editbutton48" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 3, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade410 == -1}"><input type="number" min="0" max="10" id="Grade410" name="Grade410"></td>
                                     <td th:if="${Grade410 != -1}">
                                         <span th:text="${Grade410}"></span>
-                                        <a id="editbutton49" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 4, group=${group})}"></a> 
+                                        <a th:if="${Email10 != null}" id="editbutton49" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 4, group=${group})}"></a> 
                                     </td>
 
                                     <td th:if="${Grade510 == -1}"><input type="number" min="0" max="10" id="Grade510" name="Grade510"></td>
                                     <td th:if="${Grade510 != -1}">
                                         <span th:text="${Grade510}"></span>
-                                        <a id="editbutton50" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 5, group=${group})}"></a> 
+                                        <a th:if="${Email10 != null}" id="editbutton50" class="bx bx-x" style="display: none;" th:href="@{/editgrades(GradeEmail=${Email10}, GradeNumber = 5, group=${group})}"></a> 
                                     </td>
                                     <th th:text="${Average10}"></th>
                                 </tr>

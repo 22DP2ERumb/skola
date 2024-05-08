@@ -22,6 +22,9 @@ public class UserProfileController {
     @Autowired
     private GradesRepository gradesRepository;
 
+    @Autowired
+    SupportService supportService;
+
 
     private User user;
     
@@ -78,6 +81,32 @@ public class UserProfileController {
         }
 
         return "redirect:/profile";
+    }
+
+    @PostMapping(value = "/ChangePassword")
+    public String EditPassword(@RequestParam("newPassword") String newPassword, @RequestParam("newPasswordRepeat") String newPasswordRepeat, RedirectAttributes redirectAttributes)
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (newPassword.equals(newPasswordRepeat))
+        {
+            if(newPassword.matches(".{5,}"))
+            {
+                user.SetPassword(newPassword);
+                userRepository.save(user);
+                redirectAttributes.addFlashAttribute("passuccess", "Password changed.");
+            }
+            else
+            {
+                redirectAttributes.addFlashAttribute("paserror", "Invalid password.");
+            }
+            
+        }
+        else
+        {
+            redirectAttributes.addFlashAttribute("paserror", "Password dosent match.");
+        }
+        return "redirect:/profile";
+        
     }
 
     @GetMapping("/logout")
@@ -282,6 +311,10 @@ public class UserProfileController {
                 if (grade3 != null && grade3 != ""){studentGrades.mathematicsGrade3 = Integer.parseInt(grade3); gradesRepository.save(studentGrades);}
                 if (grade4 != null && grade4 != ""){studentGrades.mathematicsGrade4 = Integer.parseInt(grade4); gradesRepository.save(studentGrades);}
                 if (grade5 != null && grade5 != ""){studentGrades.mathematicsGrade5 = Integer.parseInt(grade5); gradesRepository.save(studentGrades);}
+
+                double mathAverage = Functions.CalculateAverage(studentGrades.mathematicsGrade1, studentGrades.mathematicsGrade2, studentGrades.mathematicsGrade3, studentGrades.mathematicsGrade4, studentGrades.mathematicsGrade5);
+                studentGrades.mathematicsGradeAverage = mathAverage;
+                gradesRepository.save(studentGrades);
             }
 
             if(user.getSubject().equals("Science"))
@@ -648,12 +681,23 @@ public class UserProfileController {
             return "redirect:/login";
         }
     }
+    @PostMapping("/sendMail")
+    public String support(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("message") String message, RedirectAttributes redirectAttributes)
+    {
+        supportService.ReciveEmail(message, email, name);
+        redirectAttributes.addFlashAttribute("success", "Message sent");
+
+        supportService.sendEmail(email, name);
+        return "redirect:/support";
+    }
+
     @GetMapping("/lessonManager")
-    public String lessonManager()
+    public String lessonManager(Model model)
     {
         user = userRepository.findByIsActiveTrue();
         if (user != null && "MacibuDala".equals(user.getLore()))
         {
+            model.addAttribute("role", user.getLore());
             return "StunduSarakstaVeidosana";
         }
         else
@@ -688,5 +732,43 @@ public class UserProfileController {
             lessonsRepository.save(lessons);
         }
         return "redirect:/lessonManager";
+    }
+
+    @GetMapping("/deleteUser")
+    public String deleteUser(Model model)
+    {
+        user = userRepository.findByIsActiveTrue();
+        if (user != null)
+        {
+            model.addAttribute("role", user.getLore());
+            return "deleteUser.html";
+        }
+        else
+        {
+            return "redirect:/login";
+        }
+    }
+    @PostMapping("/deleteUser")
+    public String deleteUser(@RequestParam("userEmail") String email, RedirectAttributes redirectAttributes)
+    {
+        User deleteUser = userRepository.findByEmails(email);
+        if(deleteUser != null)
+        {
+            userRepository.delete(deleteUser);
+
+            Grades deleteGrades = gradesRepository.findByStudentEmail(email);
+            
+            if (deleteGrades != null)
+            {
+                gradesRepository.delete(deleteGrades);
+            }
+
+            redirectAttributes.addFlashAttribute("success", "User deleted");
+        }
+        else
+        {
+            redirectAttributes.addFlashAttribute("error", "User dosent exist");
+        }
+        return "redirect:/deleteUser";
     }
 }

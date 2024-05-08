@@ -86,4 +86,9 @@ public class User {
     {
         numurs = number;
     }
+
+    public void SetPassword(String password)
+    {
+        this.password = password;
+    }
 }
